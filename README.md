@@ -42,3 +42,12 @@ A comment may appear at the start of a line or following whitespace or code, but
 
 In python they are led by the '#' for single line comments  and  ''' for multiple comments.
 
+## ACTIVITY 3
+1. print("""This is how the backslash character is displayed
+
+in Python
+
+“\\”""")
+
+2. print("****  *   * ********* *   *  ****  *     *\n*  *   * *      *     *   * *    * * *   * \n****    *       *     ***** *    * *  *  *\n*       *       *     *   * *    * *   * * \n*       *       *     *   *  ****  *     *" )
+
