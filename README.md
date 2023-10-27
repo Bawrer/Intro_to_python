@@ -302,4 +302,4 @@ Certainly, let's explore these data types with examples:
     }
     ```
 
-This should give you a good introduction to common data types in Python and how to use them. Keep in mind that Python's dynamic typing allows you to assign different data types to variables as needed, which makes it a versatile and powerful language.
+ 
