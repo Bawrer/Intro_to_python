@@ -302,4 +302,383 @@ Certainly, let's explore these data types with examples:
     }
     ```
 
+ Operators in Python are special symbols or keywords that are used to perform operations on variables and values. Python provides a wide range of operators for various tasks, including arithmetic, comparison, logical, assignment, and more. Here's an introduction to some of the most commonly used operators in Python:
+
+1. **Arithmetic Operators:**
+
+   Arithmetic operators are used to perform mathematical operations.
+
+   - `+` (Addition): Adds two operands.
+   - `-` (Subtraction): Subtracts the right operand from the left operand.
+   - `*` (Multiplication): Multiplies two operands.
+   - `/` (Division): Divides the left operand by the right operand.
+   - `%` (Modulus): Returns the remainder of the division.
+   - `**` (Exponentiation): Raises the left operand to the power of the right operand.
+   - `//` (Floor Division): Returns the integer part of the division result.
+
+   Example:
+
+   ```python
+   a = 10
+   b = 3
+   addition = a + b
+   division = a / b
+   modulus = a % b
+   ```
+
+2. **Comparison Operators:**
+
+   Comparison operators are used to compare two values and return a Boolean result.
+
+   - `==` (Equal to): Checks if two values are equal.
+   - `!=` (Not equal to): Checks if two values are not equal.
+   - `<` (Less than): Checks if the left operand is less than the right operand.
+   - `>` (Greater than): Checks if the left operand is greater than the right operand.
+   - `<=` (Less than or equal to): Checks if the left operand is less than or equal to the right operand.
+   - `>=` (Greater than or equal to): Checks if the left operand is greater than or equal to the right operand.
+
+   Example:
+
+   ```python
+   x = 5
+   y = 10
+   is_equal = x == y
+   is_greater = x > y
+   ```
+
+3. **Logical Operators:**
+
+   Logical operators are used to combine and manipulate Boolean values.
+
+   - `and`: Returns `True` if both operands are `True`.
+   - `or`: Returns `True` if at least one operand is `True`.
+   - `not`: Returns the opposite of the operand's Boolean value.
+
+   Example:
+
+   ```python
+   is_sunny = True
+   is_warm = False
+   is_good_weather = is_sunny and is_warm
+   ```
+
+4. **Assignment Operators:**
+
+   Assignment operators are used to assign values to variables.
+
+   - `=` (Assignment): Assigns the value on the right to the variable on the left.
+   - `+=`, `-=`, `*=`, `/=`, `%=`, `**=`, `//=`: Perform the respective operation and assign the result to the variable on the left.
+
+   Example:
+
+   ```python
+   x = 10
+   x += 5  # Equivalent to x = x + 5
+   ```
+
+5. **Membership Operators:**
+
+   Membership operators are used to test if a value is present in a sequence (e.g., a list, tuple, or string).
+
+   - `in`: Returns `True` if the value is found in the sequence.
+   - `not in`: Returns `True` if the value is not found in the sequence.
+
+   Example:
+
+   ```python
+   fruits = ['apple', 'banana', 'cherry']
+   is_apple_in_fruits = 'apple' in fruits
+   ```
+
+6. **Identity Operators:**
+
+   Identity operators are used to compare the memory location of two objects.
+
+   - `is`: Returns `True` if both operands refer to the same object.
+   - `is not`: Returns `True` if both operands do not refer to the same object.
+
+   Example:
+
+   ```python
+   a = [1, 2, 3]
+   b = a
+   are_same_object = a is b
+   ```
+# day4 operators in python
+ Operators in Python are special symbols or keywords that are used to perform operations on variables and values. Python provides a wide range of operators for various tasks, including arithmetic, comparison, logical, assignment, and more. Here's an introduction to some of the most commonly used operators in Python:
+
+1. **Arithmetic Operators:**
+
+   Arithmetic operators are used to perform mathematical operations.
+
+   - `+` (Addition): Adds two operands.
+   - `-` (Subtraction): Subtracts the right operand from the left operand.
+   - `*` (Multiplication): Multiplies two operands.
+   - `/` (Division): Divides the left operand by the right operand.
+   - `%` (Modulus): Returns the remainder of the division.
+   - `**` (Exponentiation): Raises the left operand to the power of the right operand.
+   - `//` (Floor Division): Returns the integer part of the division result.
+
+   Example:
+
+   ```python
+   a = 10
+   b = 3
+   addition = a + b
+   division = a / b
+   modulus = a % b
+   ```
+
+2. **Comparison Operators:**
+
+   Comparison operators are used to compare two values and return a Boolean result.
+
+   - `==` (Equal to): Checks if two values are equal.
+   - `!=` (Not equal to): Checks if two values are not equal.
+   - `<` (Less than): Checks if the left operand is less than the right operand.
+   - `>` (Greater than): Checks if the left operand is greater than the right operand.
+   - `<=` (Less than or equal to): Checks if the left operand is less than or equal to the right operand.
+   - `>=` (Greater than or equal to): Checks if the left operand is greater than or equal to the right operand.
+
+   Example:
+
+   ```python
+   x = 5
+   y = 10
+   is_equal = x == y
+   is_greater = x > y
+   ```
+
+3. **Logical Operators:**
+
+   Logical operators are used to combine and manipulate Boolean values.
+
+   - `and`: Returns `True` if both operands are `True`.
+   - `or`: Returns `True` if at least one operand is `True`.
+   - `not`: Returns the opposite of the operand's Boolean value.
+
+   Example:
+
+   ```python
+   is_sunny = True
+   is_warm = False
+   is_good_weather = is_sunny and is_warm
+   ```
+
+4. **Assignment Operators:**
+
+   Assignment operators are used to assign values to variables.
+
+   - `=` (Assignment): Assigns the value on the right to the variable on the left.
+   - `+=`, `-=`, `*=`, `/=`, `%=`, `**=`, `//=`: Perform the respective operation and assign the result to the variable on the left.
+
+   Example:
+
+   ```python
+   x = 10
+   x += 5  # Equivalent to x = x + 5
+   ```
+
+5. **Membership Operators:**
+
+   Membership operators are used to test if a value is present in a sequence (e.g., a list, tuple, or string).
+
+   - `in`: Returns `True` if the value is found in the sequence.
+   - `not in`: Returns `True` if the value is not found in the sequence.
+
+   Example:
+
+   ```python
+   fruits = ['apple', 'banana', 'cherry']
+   is_apple_in_fruits = 'apple' in fruits
+   ```
+
+6. **Identity Operators:**
+
+   Identity operators are used to compare the memory location of two objects.
+
+   - `is`: Returns `True` if both operands refer to the same object.
+   - `is not`: Returns `True` if both operands do not refer to the same object.
+
+   Example:
+
+   ```python
+   a = [1, 2, 3]
+   b = a
+   are_same_object = a is b
+   ```
+
+ Operators in Python are special symbols or keywords used to perform operations on variables and values. Python provides a wide range of operators for various purposes, such as arithmetic calculations, logical comparisons, assignment, and more. Operators can be classified into several categories:
+
+1. **Arithmetic Operators:**
+   - These operators are used for basic mathematical calculations.
+
+   ```python
+   +   # Addition
+   -   # Subtraction
+   *   # Multiplication
+   /   # Division
+   %   # Modulus (remainder)
+   **  # Exponentiation
+   //  # Floor Division (returns the integer part of the division)
+   ```
+
+   Example:
+
+   ```python
+   a = 10
+   b = 3
+   addition = a + b  # 13
+   division = a / b  # 3.3333...
+   modulus = a % b   # 1
+   ```
+
+2. **Comparison Operators:**
+   - These operators are used to compare values and return Boolean results.
+
+   ```python
+   ==  # Equal to
+   !=  # Not equal to
+   <   # Less than
+   >   # Greater than
+   <=  # Less than or equal to
+   >=  # Greater than or equal to
+   ```
+
+   Example:
+
+   ```python
+   x = 5
+   y = 7
+   is_equal = x == y     # False
+   is_not_equal = x != y # True
+   ```
+
+3. **Logical Operators:**
+   - Logical operators are used to combine or negate Boolean values.
+
+   ```python
+   and  # Logical AND
+   or   # Logical OR
+   not  # Logical NOT
+   ```
+
+   Example:
+
+   ```python
+   is_true = True
+   is_false = False
+   result = is_true and is_false  # False
+   ```
+
+4. **Assignment Operators:**
+   - These operators are used to assign values to variables.
+
+   ```python
+   =    # Assign
+   +=   # Add and assign
+   -=   # Subtract and assign
+   *=   # Multiply and assign
+   /=   # Divide and assign
+   %=   # Modulus and assign
+   **=  # Exponentiate and assign
+   //=  # Floor divide and assign
+   ```
+
+   Example:
+
+   ```python
+   x = 10
+   x += 5  # x is now 15
+   ```
+
+5. **Bitwise Operators:**
+   - These operators are used for manipulating individual bits in integers.
+
+   ```python
+   &   # Bitwise AND
+   |   # Bitwise OR
+   ^   # Bitwise XOR
+   ~   # Bitwise NOT
+   <<  # Left shift
+   >>  # Right shift
+   ```
+
+   Example:
+
+   ```python
+   a = 5   # 101 (in binary)
+   b = 3   # 011 (in binary)
+   result = a & b  # Bitwise AND: 001 (in binary), which is 1 in decimal
+   ```
+
+6. **Membership Operators:**
+   - These operators are used to test if a value is a member of a sequence (e.g., a string, list, or tuple).
+
+   ```python
+   in    # True if a value is found in the sequence
+   not in  # True if a value is not found in the sequence
+   ```
+
+   Example:
+
+   ```python
+   fruits = ['apple', 'banana', 'cherry']
+   is_apple_in_fruits = 'apple' in fruits  # True
+   ```
+
+# day 4 operators
+Operators in Python are special symbols that allow you to perform various operations on your data. They enable you to manipulate values in order to solve complex problems and implement elaborate logic within your code.
+
+## Types of Operator
+Python language supports the following types of operators.
+
+Arithmetic Operators
+Comparison (Relational) Operators
+Assignment Operators
+Logical Operators
+Bitwise Operators
+Membership Operators
+Identity Operators
+
+## Python Arithmetic Operators
+Operator                      	Description                                             	              Example
++ Addition	                     Adds values on either side of the operator.                         	a + b = 30
+- Subtraction	                  Subtracts right hand operand from left hand operand.	               a – b = -10
+* Multiplication	               Multiplies values on either side of the operator	                  a * b = 200
+/ Division	                     Divides left hand operand by right hand operand	                       b / a = 2
+% Modulus	                     Divides left hand operand by right hand operand and returns remainder	b % a = 0
+** Exponent	                     Performs exponential (power) calculation on operators	a**b =10 to the power 20
+
+//	Floor                         Division - The division of operands where the result is the quotient in which the digits after the decimal point are removed. But if one of the operands is negative, the result is floored, i.e., rounded away from zero (towards negative infinity) −	9//2 = 4 and 9.0//2.0 = 4.0, -11//3 = -4, -11.0//3 = -4.0
+
+
+## Python Comparison Operators
+These operators compare the values on either sides of them and decide the relation among them. They are also called Relational operators.
+
+Assume variable a holds 10 and variable b holds 20, then −
+
  
+
+Operator            	Description and examples                                                               	
+==	                  If the values of two operands are equal, then the condition becomes true.	(a == b) is not true.
+!=	                  If values of two operands are not equal, then condition becomes true.	   (a != b) is true.
+<>	                  If values of two operands are not equal, then condition becomes true.	   (a <> b) is true. This is similar to != operator.
+>	                  If the value of left operand is greater than the value of right operand, then condition becomes true.	(a > b) is not true.
+<	                  If the value of left operand is less than the value of right operand, then condition becomes true.	(a < b) is true.
+>=	                  If the value of left operand is greater than or equal to the value of right operand, then condition becomes true.	(a >= b) is not true.
+<=	                  If the value of left operand is less than or equal to the value of right operand, then condition becomes true.	(a <= b) is true.
+
+##Python Assignment Operators
+Assume variable a holds 10 and variable b holds 20, then −
+
+ 
+Operator	                Description and 	Example
+=                       Assigns values from right side operands to left side operand	c = a + b assigns value of a + b into c
++=                       Add AND	It adds right operand to the left operand and assign the result to left operand	c += a is equivalent to c = c + a
+-=                       Subtract AND	It subtracts right operand from the left operand and assign the result to left operand	c -= a is equivalent to c = c - a
+*=                       Multiply AND	It multiplies right operand with the left operand and assign the result to left operand	c *= a is equivalent to c = c * a
+/=                       Divide AND	It divides left operand with the right operand and assign the result to left operand	c /= a is equivalent to c = c / a
+%=                      Modulus AND	It takes modulus using two operands and assign the result to left operand	c %= a is equivalent to c = c % a
+**=                     Exponent AND	Performs exponential (power) calculation on operators and assign value to the left operand	c **= a is equivalent to c = c ** a
+//=                     Floor Division	It performs floor division on operators and assign value to the left operand	c //= a is equivalent to c = c // a
