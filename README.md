@@ -5,7 +5,7 @@ notes and activities
 
 Python is a high-level, interpreted programming language known for its simplicity and readability. 
 
-## pYTHON IN THE JOB MARKET
+## PYTHON IN THE JOB MARKET
 
 Versatility: Python is known for its versatility and can be used in various domains, including web development, data science, machine learning, artificial intelligence, automation, scientific computing, and more. This versatility makes Python professionals in demand in a wide range of industries.
 
