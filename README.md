@@ -125,3 +125,181 @@ print("Age:", age)
 # Reassigning variables
 age = age + 5
 print("Age after 5 years:", age)
+
+# day3
+Data types in Python are essential for representing and manipulating different kinds of data. Understanding data types is fundamental for writing effective and bug-free code. Python provides several built-in data types, and you can also create custom data types using classes. Here are some of the most commonly used data types in Python:
+
+1. **Numeric Types:**
+   - **int**: Represents integers, e.g., 1, -5, 100.
+   - **float**: Represents floating-point numbers, e.g., 3.14, -0.5, 2.0.
+
+2. **Boolean Type:**
+   - **bool**: Represents Boolean values, `True` or `False`, which are used for logical operations.
+
+3. **String Type:**
+   - **str**: Represents sequences of characters, e.g., "Hello, World!".
+
+4. **List:**
+   - **list**: An ordered collection of values that can be of any data type. Lists are mutable, and you can add, remove, or change elements.
+
+5. **Tuple:**
+   - **tuple**: Similar to a list but immutable, meaning you cannot change its elements once defined.
+
+6. **Dictionary:**
+   - **dict**: Represents a collection of key-value pairs, where each key is unique and associated with a value.
+
+7. **Set:**
+   - **set**: An unordered collection of unique elements. Sets are commonly used for tasks that involve testing membership and eliminating duplicates.
+
+8. **None Type:**
+   - **NoneType**: Represents the absence of a value. It is often used to indicate that a variable or function returns nothing.
+
+9. **Custom Classes:**
+   - You can define your own data types by creating classes. This allows you to encapsulate data and methods into a single unit, facilitating more complex data structures.
+
+10. **Type Casting:**
+    - You can convert one data type to another using type casting functions like `int()`, `float()`, `str()`, etc.
+
+11. **Special Data Types:**
+    - Python also provides some special data types like `complex` for complex numbers and `bytes` for representing sequences of bytes.
+
+12. **Collection Data Types (Containers):**
+    - Lists, tuples, dictionaries, and sets are often referred to as collection data types or containers because they hold multiple values. You can iterate through them and perform various operations.
+
+It's important to understand the characteristics and behaviors of these data types, as they dictate how you can use and manipulate data in your Python programs. For example, some data types are mutable (can be changed), while others are immutable (cannot be changed), and this can have significant implications for how your code behaves. Additionally, different data types are suited for different types of tasks, so choosing the right data type is crucial for writing efficient and maintainable code.
+
+### examples
+Certainly, let's explore these data types with examples:
+
+1. **Numeric Types:**
+
+   - `int` and `float`:
+
+     ```python
+     num_int = 42
+     num_float = 3.14
+     ```
+
+2. **Boolean Type:**
+
+   - `bool`:
+
+     ```python
+     is_true = True
+     is_false = False
+     ```
+
+3. **String Type:**
+
+   - `str`:
+
+     ```python
+     greeting = "Hello, World!"
+     ```
+
+4. **List:**
+
+   - `list`:
+
+     ```python
+     fruits = ['apple', 'banana', 'cherry']
+     ```
+
+   - Lists are mutable, so you can add or change elements:
+
+     ```python
+     fruits.append('orange')
+     fruits[1] = 'kiwi'
+     ```
+
+5. **Tuple:**
+
+   - `tuple`:
+
+     ```python
+     coordinates = (3, 4)
+     ```
+
+   - Tuples are immutable; you can't change their elements.
+
+6. **Dictionary:**
+
+   - `dict`:
+
+     ```python
+     person = {
+         'name': 'John',
+         'age': 30,
+         'city': 'New York'
+     }
+     ```
+
+   - Access values using keys:
+
+     ```python
+     name = person['name']
+     ```
+
+7. **Set:**
+
+   - `set`:
+
+     ```python
+     unique_numbers = {1, 2, 3, 2, 4, 5}
+     ```
+
+   - Sets automatically remove duplicates.
+
+8. **None Type:**
+
+   - `NoneType`:
+
+     ```python
+     result = None
+     ```
+
+   - Often used when a function doesn't return anything explicitly.
+
+9. **Custom Classes:**
+
+   - You can create your own data types using classes. For example:
+
+     ```python
+     class Person:
+         def __init__(self, name, age):
+             self.name = name
+             self.age = age
+
+     john = Person("John", 30)
+     ```
+
+10. **Type Casting:**
+
+    - Converting between data types using casting functions:
+
+    ```python
+    num_str = "42"
+    num_int = int(num_str)  # Convert string to int
+    ```
+
+11. **Special Data Types:**
+
+    - `complex` and `bytes`:
+
+    ```python
+    complex_num = 2 + 3j
+    byte_data = b'Hello'
+    ```
+
+12. **Collection Data Types (Containers):**
+
+    - Lists, tuples, dictionaries, and sets are examples of collection data types. Here's an example using a dictionary:
+
+    ```python
+    student = {
+        'name': 'Alice',
+        'grades': [85, 90, 78]
+    }
+    ```
+
+This should give you a good introduction to common data types in Python and how to use them. Keep in mind that Python's dynamic typing allows you to assign different data types to variables as needed, which makes it a versatile and powerful language.
