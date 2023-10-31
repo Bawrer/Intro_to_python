@@ -711,22 +711,8 @@ for num in numbers:
 - `else`: Optional block for code to execute if no exceptions are raised.
 - `finally`: Optional block for cleanup, always executed.
 
-## 10. Example of Exception Handling
-- Handling division by zero:
-```python
-try:
-    result = 10 / 0
-except ZeroDivisionError:
-    print("Division by zero is not allowed.")
-else:
-    print(f"Result is: {result}")
-finally:
-    print("Cleanup")
 
-## 11. Control Flow in Functions
-- Functions can contain their own control flow.
-- The `return` statement determines what the function returns and when it exits.
-
+ 
 # Day 2
 ## Python Functions In Python, function is a group of related statements that perform a specific task.
  Functions help break our program into smaller and modular chunks. As our program grows larger and larger,
