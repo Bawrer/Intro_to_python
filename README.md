@@ -627,4 +627,7 @@ Certainly, let's explore these data types with examples:
    is_apple_in_fruits = 'apple' in fruits  # True
    ```
 
+# week2
+## day1
+Control flow in Python is a fundamental concept that allows you to control the order in which statements and code blocks are executed. Python provides several control flow constructs 
  
