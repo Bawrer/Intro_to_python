@@ -943,9 +943,7 @@ local
 
 ##  global and local with the same name
 
-x
-=
-5
+x=5
 def foo():
 x = 10
 print("local x:", x
