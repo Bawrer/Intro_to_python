@@ -767,17 +767,17 @@ add_two_numbers(1, 2)
 Note that arguments 1 and 2 have been passed. Hence, the return value will be 3. You can put any two numbers in place of 1 and 2, and it will return the corresponding sum of the two numbers. But calling a function and not doing anything with the result is meaningless, isn’t it? So you can now assign it to a variable which may be used later on. In the following example, can just printing it.
 
 >>> def add_two_numbers(num1, num2):
-...     '''returns the sum of num1 and num2'''
-...     result = num1 + num2
-...     return result
-...
+     '''returns the sum of num1 and num2'''
+     result = num1 + num2
+     return result
+
 >>> # call the function add_two_numbers with arguments 4 and 5 and assign it
->>> # to a variable sum_of_4_and_5
+ 
 >>> sum_of_4_and_5 = add_two_numbers(4, 5)
->>>
->>> # show the value stored in sum_of_4_and_5
+ 
+  # show the value stored in sum_of_4_and_5
 >>> print(sum_of_4_and_5)
-9
+ 
 Call a function that performs a task and has no return value
 In case the function is not meant to return anything and just performs some task, like committing something to a database or changing the text of some button in the user interface, then you do not need to assign the function to a variable. You can just call the function.
 
@@ -795,15 +795,14 @@ How to call a function with arguments
 Note that in this case you pass parameters in the order in which they are supposed to be processed. For example, if you had a function that duplicates a string by the number of times, where both the string and the number needs to be provided by the function, such as:
 
 >>> def string_multiplier(string_arg, number):
-...     '''takes the string_arg and multiplies it with one more than the number'''
-...     return string_arg * (number + 1)
-...
+     '''takes the string_arg and multiplies it with one more than the number'''
+      return string_arg * (number + 1)
 
->>> # passing string_arg and number and in that order...
+ # passing string_arg and number and in that order...
 >>> print(string_multiplier('a', 5))aaaaaa
 
 >>> # below code will return error as the arguments are not in order...
->>> print(string_multiplier(5, 'a'))Traceback (most recent call last):
+ print(string_multiplier(5, 'a'))Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "<stdin>", line 3, in string_multiplier
 TypeError: must be str, not int
