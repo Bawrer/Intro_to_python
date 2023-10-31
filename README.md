@@ -893,10 +893,10 @@ elegant.
 some nested iteration.
 # Global and local variables
 ## Global Variables
- In Python, a variable declared outside of the function or in global
+- In Python, a variable declared outside of the function or in global
 scope is known as global variable. This means, global variable
 can be accessed inside or outside of the function.
- Example 1: Create a Global Variable
+- Example 1: Create a Global Variable
 x = "global“
 def foo():
 print("x inside :", x)
