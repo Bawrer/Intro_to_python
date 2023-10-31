@@ -784,13 +784,12 @@ the None object.
 - For example:
  >>> print(greet(“5stars")) or
  >>> greet(“5stars”)
-- Hello, Rahul. Good morning!
+- Hello, 5stars. Good morning!
 - None : Here, None is the returned value.
 - 
-
-  ## Eample of a function using return statement
-   def absolute_value(num):
-   """This function returns the absolute value of the
+## Eample of a function using return statement
+def absolute_value(num):
+"""This function returns the absolute value of the
 entered number"""
 if num >= 0:
 return num
@@ -892,6 +891,7 @@ elegant.
 - Sequence generation is easier with recursion than using
 some nested iteration.
 # Global and local variables
+
 ## Global Variables
 - In Python, a variable declared outside of the function or in global
 scope is known as global variable. This means, global variable
