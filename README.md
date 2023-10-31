@@ -714,31 +714,96 @@ for num in numbers:
 
  
 # Day 2
+
 ## Python Functions In Python, function is a group of related statements that perform a specific task.
- Functions help break our program into smaller and modular chunks. As our program grows larger and larger,
- functions make it more organized and manageable. Furthermore, it avoids repetition and makes code reusable
+ Functions
+A function is a block of code that takes in some data and, either performs some kind of transformation and returns the transformed data, or performs some task on the data, or both. Functions are useful because they provide a high degree of modularity. Similar code can be easily grouped into functions and you can provide a name to the function that describes what the function is for. Functions are the simplest, and, sometimes the most useful, tool for writing modular code.
 
-## syntax for function in python
+In this tutorial you will get to know:
 
- def greet(name):
-     """This function greets to   the person passed in as   parameter"""
-         print("Hello, " + name + ". Good morning!")
+How to create a function
+How to call a function
+How to create a function:
+In Python to create a function, you need to write it in the following manner. Please note that the body of the function is indented by 4 spaces.
 
+def name_of_the_function(arguments):
+    '''
+    doctring of the function
+    note that the function block is indented by 4 spaces
+    '''
+    body of the function
+    return the return value or expression
+You can look at the example below where a function returns the sum of two numbers.
 
-1 Keyword def marks the start of function header. 
-2.  A function name to uniquely identify it. Function naming follows the same rules of writing identifiers in Python.
-3. Parameters (arguments) through which we pass values to a function. They are optional.
-4.  A colon (:) to mark the end of function header. 
-5.  Optional documentation string (docstring) to describe what the function does.
-6.  One or more valid python statements that make up the function body. Statements must have same indentation level (usually 4 spaces).
-7.  An optional return statement to return a value from the function.
+def add_two_numbers(num1, num2):
+    '''returns the sum of num1 and num2'''
+    result = num1 + num2
+    return result
+Here are all the parts of the function:
 
+Keyword def: This is the keyword used to say that a function will be defined now, and the next word that is there, is the function name.
 
-# Function Call
+Function name: This is the name that is used to identify the function. The function name comes after the def keyword. Function names have to be a single word. PEP8, which is a style guide for Python, recommends that in case multiple words are used, they should be in lowercase and they should be separated with an underscore. In the example above, add_two_numbers is the parameter name.
 
-Once we have defined a function, we can call it from another function, program or even the Python prompt.
-To call a function we simply type the function name with appropriate parameters
+Parameter list: Parameter list are place holders that define the parameters that go into the function. The parameters help to generalise the transformation/computation/task that is needed to be done. In Python, parameters are enclosed in parentheses. In the example above, the parameters are num1and num2. You can pass as many parameters as needed to a function.
 
->>> greet('Five stars')
-  Hello, Five stars. Good morning!
-## How Function works in Python?
+Function docstrings: These are optional constructs that provide a convenient way for associated documentation to the corresponding function. Docstrings are enclosed by triple quotes '''you will write the docstring here'''
+
+Function returns: Python functions returns a value. You can define what to return by the return keyword. In the example above, the function returns result. In case you do not define a return value, the function will return None.
+
+How to call a function
+Call a function with a return value
+To call a function means that you are telling the program to execute the function. If there is a return value defined, the function would return the value, else the function would return None. To call the function, you write the name of the function followed by parentheses. In case you need to pass parameters/arguments to the function, you write them inside the parentheses.
+
+For example, if you had a function that added two numbers
+
+def add_two_numbers(num1, num2):
+    '''returns the sum of num1 and num2'''
+    result = num1 + num2
+    return result
+You would call the function like this:
+
+add_two_numbers(1, 2)
+Note that arguments 1 and 2 have been passed. Hence, the return value will be 3. You can put any two numbers in place of 1 and 2, and it will return the corresponding sum of the two numbers. But calling a function and not doing anything with the result is meaningless, isn’t it? So you can now assign it to a variable which may be used later on. In the following example, can just printing it.
+
+>>> def add_two_numbers(num1, num2):
+...     '''returns the sum of num1 and num2'''
+...     result = num1 + num2
+...     return result
+...
+>>> # call the function add_two_numbers with arguments 4 and 5 and assign it
+>>> # to a variable sum_of_4_and_5
+>>> sum_of_4_and_5 = add_two_numbers(4, 5)
+>>>
+>>> # show the value stored in sum_of_4_and_5
+>>> print(sum_of_4_and_5)
+9
+Call a function that performs a task and has no return value
+In case the function is not meant to return anything and just performs some task, like committing something to a database or changing the text of some button in the user interface, then you do not need to assign the function to a variable. You can just call the function.
+
+For example, if you had a function that prints a string
+
+def printing_side_effects():
+    '''a function with side effects'''
+    print('this is a function with side effects and performs some task')
+You can just call the function and it will get executed.
+
+>>> printing_side_effects()
+this is a function with side effects and performs some task
+
+How to call a function with arguments
+Note that in this case you pass parameters in the order in which they are supposed to be processed. For example, if you had a function that duplicates a string by the number of times, where both the string and the number needs to be provided by the function, such as:
+
+>>> def string_multiplier(string_arg, number):
+...     '''takes the string_arg and multiplies it with one more than the number'''
+...     return string_arg * (number + 1)
+...
+
+>>> # passing string_arg and number and in that order...
+>>> print(string_multiplier('a', 5))aaaaaa
+
+>>> # below code will return error as the arguments are not in order...
+>>> print(string_multiplier(5, 'a'))Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 3, in string_multiplier
+TypeError: must be str, not int
