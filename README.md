@@ -715,94 +715,286 @@ for num in numbers:
  
 # Day 2
 
-## Python Functions In Python, function is a group of related statements that perform a specific task.
- Functions
-A function is a block of code that takes in some data and, either performs some kind of transformation and returns the transformed data, or performs some task on the data, or both. Functions are useful because they provide a high degree of modularity. Similar code can be easily grouped into functions and you can provide a name to the function that describes what the function is for. Functions are the simplest, and, sometimes the most useful, tool for writing modular code.
+##  Functions
+In Python, function is a group of related statements that perform a specific task.
+Functions help break our program into smaller and modular chunks. As our program grows larger and larger, functions make it more organized and manageable.
+Furthermore, it avoids repetition and makes code reusable.
 
-In this tutorial you will get to know:
+## Sintax of a function
+ def function_name(parameters):
+"""docstring"""
+statement(s)
 
-How to create a function
-How to call a function
-How to create a function:
-In Python to create a function, you need to write it in the following manner. Please note that the body of the function is indented by 4 spaces.
+### Above shown is a function definition which consists of following components.
+Keyword def which marks the start of function header.
+A function name to uniquely identify it. Function name can be any unique identifier.
+Parameters (arguments) through which we pass values to a function. They areoptional.
+A colon (:) to mark the end of function header.
+Optional documentation string (docstring) to describe what the function does.
+One or more valid python statements that make up the function body. Statements must have same indentation level.
+An optional return statement to return a value from the function.
 
-def name_of_the_function(arguments):
-    '''
-    doctring of the function
-    note that the function block is indented by 4 spaces
-    '''
-    body of the function
-    return the return value or expression
-You can look at the example below where a function returns the sum of two numbers.
+## Example of a function
 
-def add_two_numbers(num1, num2):
-    '''returns the sum of num1 and num2'''
-    result = num1 + num2
-    return result
-Here are all the parts of the function:
+def greet(name):
+"""This function greets the person passed in as
+parameter"""
+print("Hello, " + name + ". Good morning!")
+Here, a function of name greet() is defined. It has one
+argument : name
+O/P :
+If we execute this code with the name as 5stars, the
+output is :
+Hello 5Stars. Good Morning!
 
-Keyword def: This is the keyword used to say that a function will be defined now, and the next word that is there, is the function name.
+## How to call a function
 
-Function name: This is the name that is used to identify the function. The function name comes after the def keyword. Function names have to be a single word. PEP8, which is a style guide for Python, recommends that in case multiple words are used, they should be in lowercase and they should be separated with an underscore. In the example above, add_two_numbers is the parameter name.
+Once we have defined a function, we can call it from
+◦ another function,
+◦ program or
+◦ Python prompt.
+ To call a function we simply type the function name
+with appropriate parameters. eg: To call the function
+greet with the name 5stars, we write the following at
+the Python prompt
+ >>> greet(„5stars') 
+## DocString
+The first string after the function header is called the docstring
+and is short for documentation string.
+- It is used to explain in brief, what a function does.
+- Although optional, documentation is a good programming practice.
+- In the example of the function given in previous slide, we have a docstring immediately below the function header.
+- We generally use triple quotes so that docstring can extend up to multiple lines.
+- This string is available to us as __doc__ attribute of the function.
+- For example:
+- Try running the following into the Python shell to see the output.
+ >>> print(greet.__doc__)
+- This function greets to the person passed into the name parameter
 
-Parameter list: Parameter list are place holders that define the parameters that go into the function. The parameters help to generalise the transformation/computation/task that is needed to be done. In Python, parameters are enclosed in parentheses. In the example above, the parameters are num1and num2. You can pass as many parameters as needed to a function.
+## The return statement
+The return statement is used to exit a function and go back to the
+place from where it was called.
+- Syntax of return
+- return [expression_list]
+- This statement can contain expression which gets evaluated and
+the value is returned.
+- If there is no expression in the statement or the return statement
+itself is not present inside a function, then the function will return
+the None object.
+- For example:
+ >>> print(greet(“5stars")) or
+ >>> greet(“5stars”)
+- Hello, Rahul. Good morning!
+- None : Here, None is the returned value.
+- 
 
-Function docstrings: These are optional constructs that provide a convenient way for associated documentation to the corresponding function. Docstrings are enclosed by triple quotes '''you will write the docstring here'''
+  ## Eample of a function using return statement
+   def absolute_value(num):
+   """This function returns the absolute value of the
+entered number"""
+if num >= 0:
+return num
+else:
+return –num
+print(absolute_value(2))
+# Output: 2
+print(absolute_value(-4))
+# Output: 4
 
-Function returns: Python functions returns a value. You can define what to return by the return keyword. In the example above, the function returns result. In case you do not define a return value, the function will return None.
+## scope and lifetime of variables
 
-How to call a function
-Call a function with a return value
-To call a function means that you are telling the program to execute the function. If there is a return value defined, the function would return the value, else the function would return None. To call the function, you write the name of the function followed by parentheses. In case you need to pass parameters/arguments to the function, you write them inside the parentheses.
+Scope of a variable is the portion of a program where
+the variable is recognized. Parameters and variables
+defined inside a function is not visible from outside.
+Hence, they have a local scope.
+- Lifetime of a variable is the period throughout which
+the variable exits in the memory. The lifetime of
+variables inside a function is as long as the function
+executes.
+- They are destroyed once we return from the function.
+Hence, a function does not remember the value of a
+variable from its previous calls.
 
-For example, if you had a function that added two numbers
+## example of a function to illustrate the use of scope and lifetime of a variable
+- def my_func():         # function is defined
+x = 100
+print("Value inside function:",x)
+x = 200
+my_func()                 # function is called
+print("Value outside function:",x)
+O/P
+Value inside function: 100
+Value outside function: 200
 
-def add_two_numbers(num1, num2):
-    '''returns the sum of num1 and num2'''
-    result = num1 + num2
-    return result
-You would call the function like this:
+## Types of functions
+#### Build- In functions :
+Functions that are built in Python are called Build- In functions .eg : split(), sort(),
+append(), input(), print()
 
-add_two_numbers(1, 2)
-Note that arguments 1 and 2 have been passed. Hence, the return value will be 3. You can put any two numbers in place of 1 and 2, and it will return the corresponding sum of the two numbers. But calling a function and not doing anything with the result is meaningless, isn’t it? So you can now assign it to a variable which may be used later on. In the following example, can just printing it.
+#### User-Defined Functions:
+Functions defined by the users themselves are called User-Defined functions.
+The functions greet() and my_func() explained in the
+previous slides are examples of user defined functions
 
->>> def add_two_numbers(num1, num2):
-     '''returns the sum of num1 and num2'''
-     result = num1 + num2
-     return result
+## Default arguments
+Python allows function argumets to have default values.
+ If the function is called without the argument, the argument gets its
+default value.
+ Further, arguments can be specified in any order by using named
+arguments.
+- Eg :
+def CalArea(height =2, width = 5)
+area = width*height
+print “ Width = “, width, “ \tHeight = “, height, “ \tarea = “, area
+CalArea()
+CalArea(width = 5.6)
+CalArea(height = 9)
+CalArea(width = 7, height = 5)
+CalArea(4.5, 3.5)
+CalArea(5)
 
->>> # call the function add_two_numbers with arguments 4 and 5 and assign it
- 
->>> sum_of_4_and_5 = add_two_numbers(4, 5)
- 
-  # show the value stored in sum_of_4_and_5
->>> print(sum_of_4_and_5)
- 
-Call a function that performs a task and has no return value
-In case the function is not meant to return anything and just performs some task, like committing something to a database or changing the text of some button in the user interface, then you do not need to assign the function to a variable. You can just call the function.
+- The O/P of the previous program will be:
+Width = 5 Height =2 area = 10
+Width = 5.6 Height =2 area = 11.2
+Width = 5 Height =9 area = 45
+Width = 7 Height =5 area = 35
+Width = 3.5 Height =4.5 area = 15.75
+Width = 5 Height =5 area = 25
+## Recursion
+Recursion is the process of defining something in terms of
+itself.
+We know that in Python, a function can call other functions.
+- It is even possible for the function to call itself.
+- These type of construct are termed as recursive functions.
+- Every recursive function should have a terminating or base
+condition.
+- Following is an example of recursive function to find the
+factorial of an integer.
+- Factorial of a number is the product of all the integers from
+1 to that number. For example, the factorial of 6 (denoted as 6!) is 1*2*3*4*5*6 = 720.
 
-For example, if you had a function that prints a string
+## examples of recursive
+# find the factorial of a number
+def calc_factorial(x):
+"""This is a recursive function to find the
+factorial of an integer"""
+if x == 1:
+return 1
+else:
+return (x * calc_factorial(x-1))
+num = 4
+print("The factorial of", num, "is", calc_factorial(num))
 
-def printing_side_effects():
-    '''a function with side effects'''
-    print('this is a function with side effects and performs some task')
-You can just call the function and it will get executed.
+## Advantages of Recursion
+- Recursive functions make the code look clean and
+elegant.
+- A complex task can be broken down into simpler subproblems using recursion.
+- Sequence generation is easier with recursion than using
+some nested iteration.
+# Global and local variables
+## Global Variables
+ In Python, a variable declared outside of the function or in global
+scope is known as global variable. This means, global variable
+can be accessed inside or outside of the function.
+ Example 1: Create a Global Variable
+x = "global“
+def foo():
+print("x inside :", x)
+foo()
+print("x outside:", x)
+O/P
+x inside : global
+x outside: global \
 
->>> printing_side_effects()
-this is a function with side effects and performs some task
+## Local Variables
+A variable declared inside the function's body or in the local scope is known as local
+variable.
+Accessing local variable outside the scope
+def foo():
+y = “local”
+foo()
+print(y)
+O/P :
+NameError: name 'y' is not defined
+The output shows an error, because we are trying to access a local
+variable y in a global scope whereas the local variable only works
+inside foo() or local scope.
 
-How to call a function with arguments
-Note that in this case you pass parameters in the order in which they are supposed to be processed. For example, if you had a function that duplicates a string by the number of times, where both the string and the number needs to be provided by the function, such as:
+## Creating local variables
+def foo():
+y = "local"
+print(y)
+foo()
+O/P :
+loca
 
->>> def string_multiplier(string_arg, number):
-     '''takes the string_arg and multiplies it with one more than the number'''
-      return string_arg * (number + 1)
+## using global and local variables in the same code
+x = "global“
+def foo():
+global x
+y = "local"
+x = x * 2
+print(x)
+print(y)
+foo()
+O/P :
+global global
+local
 
- # passing string_arg and number and in that order...
->>> print(string_multiplier('a', 5))aaaaaa
+##  global and local with the same name
 
->>> # below code will return error as the arguments are not in order...
- print(string_multiplier(5, 'a'))Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "<stdin>", line 3, in string_multiplier
-TypeError: must be str, not int
+x
+=
+5
+def foo():
+x = 10
+print("local x:", x
+)
+foo()
+print("global x:", x
+)
+O/P
+local x: 10
+global x: 5
+
+
+## Global keyword
+
+In Python, global keyword allows you to modify the variable outside of the current scope. It is used to
+create a global variable and make changes to the variable in a local context.
+
+## Rules of global Keyword
+
+#### The basic rules for global keyword are:
+• When we create a variable inside a function, it’s local by default.
+• When we define a variable outside of a function, it’s global by default. You don’t have to use global keyword.
+• We use global keyword to read and write a global variable inside a function.
+• Use of global keyword outside a function has no effect
+
+Use of global Keyword (With Example)
+c = 1 # global variable
+def add():
+print(c)
+add()
+When we run above program, the output will be:
+
+- Modifying Global Variable From Inside the Function
+c = 1 # global variable
+def add():
+c = c + 2 # increment c by 2
+print(c)
+add()
+When we run above program, the output shows an error:
+UnboundLocalError: local variable 'c' referenced before assignment
+
+Changing Global Variable From Inside a Function
+using global
+c = 0 # global variable
+def add():
+global c
+c = c + 2 # increment by 2
+print("Inside add():", c)
+add()
+print("In main:", c)
+When we run above program, the output will be:
+Inside add(): 2 In main: 2
