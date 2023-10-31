@@ -720,13 +720,9 @@ for num in numbers:
 
 ## syntax for function in python
 
-def add_numbers(a, b):
-
-    """This function adds two numbers."""
-    
-    result = a + b
-    
-    return result
+ def greet(name):
+     """This function greets to   the person passed in as   parameter"""
+         print("Hello, " + name + ". Good morning!")
 
 
 1 Keyword def marks the start of function header. 
@@ -736,3 +732,13 @@ def add_numbers(a, b):
 5.  Optional documentation string (docstring) to describe what the function does.
 6.  One or more valid python statements that make up the function body. Statements must have same indentation level (usually 4 spaces).
 7.  An optional return statement to return a value from the function.
+
+
+# Function Call
+
+Once we have defined a function, we can call it from another function, program or even the Python prompt.
+To call a function we simply type the function name with appropriate parameters
+
+>>> greet('Five stars')
+  Hello, Five stars. Good morning!
+## How Function works in Python?
