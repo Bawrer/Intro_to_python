@@ -727,4 +727,13 @@ finally:
 - Functions can contain their own control flow.
 - The `return` statement determines what the function returns and when it exits.
 
+# Day 2
+## Python Functions In Python, function is a group of related statements that perform a specific task.
+ Functions help break our program into smaller and modular chunks. As our program grows larger and larger,
+ functions make it more organized and manageable. Furthermore, it avoids repetition and makes code reusable
 
+## syntax for function in python
+def add_numbers(a, b):
+    """This function adds two numbers."""
+    result = a + b
+    return result
