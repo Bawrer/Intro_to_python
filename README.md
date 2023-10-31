@@ -719,6 +719,7 @@ for num in numbers:
  functions make it more organized and manageable. Furthermore, it avoids repetition and makes code reusable
 
 ## syntax for function in python
+
 def add_numbers(a, b):
     """This function adds two numbers."""
     result = a + b
