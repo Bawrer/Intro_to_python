@@ -1178,3 +1178,149 @@ response = requests.get('https://www.example.com')
 ```
 
 By following these steps, you can import modules from external sources in Python. The process is the same for most external packages, but you may need to consult the specific package's documentation or PyPI page for any additional installation or usage instructions. Keep in mind that using a virtual environment for your project is recommended to manage package dependencies and avoid conflicts between different projects.
+Day4
+
+Regular expressions, often referred to as “regexes,” are a concise way of specifying patterns in text. They are a powerful tool in Python, thanks to the `re` module, and serve several key purposes:
+
+1.	Parsing: Regular expressions are used to identify and extract specific pieces of text that match certain criteria within a larger text or data.
+
+2.	Searching: They help locate substrings that may have multiple forms, such as finding various image file extensions like ‘pet.png,’ ‘pet.gif,’ and ‘pet.mpg’ while excluding ‘carpet.gif.’
+
+
+3.	Searching and Replacing: You can find substrings and replace specific words within the matched string or strings, such as replacing a local phone number format like ‘071 234 5678’ with an international format like ‘+2771 234 5678.’
+
+4.	Splitting Strings: Regular expressions are handy for splitting a string at specific delimiters. For example, you can split a comma-separated list into individual items by using a regex that matches ‘,’.
+
+
+5.	Validation: They are used to check whether a string adheres to certain criteria, like validating whether an email address is in the standard format.
+However, regular expressions do have limitations:
+- They are suitable for handling recursive (repeating) structured text only if the maximum number of repetitions is known in advance.
+- Large and complex regex patterns can become challenging to maintain and understand.
+
+As a best practice, when dealing with highly structured data formats like XML, it’s often better to use specialized parsers tailored to that format. In simpler terms, a basic regular expression consists of a character followed by a quantifier, while more complex expressions can involve combinations of quantified expressions to match intricate patterns in text data.
+ Regular expression syntax
+This section provides an overview of regular expressions (regex) and their syntax. It covers key functions from the Python re module and presents a table of commonly used functions and their descriptions.
+
+1. **Introduction to Regular Expressions: ** 
+   - Regular expressions are a powerful tool for text pattern matching.
+   - The section is divided into four subsections:
+     - Matching individual characters or character groups.
+     - Quantifying matches (e.g., matching zero or more occurrences).
+     - Creating and grouping sub-expressions.
+     - Using language assertions and flags.
+
+2. **Table of re Module Functions (commonly used):**
+   - `compile`: Compiles a regex pattern.
+   - `findall`: Returns a list of all non-overlapping matches in a string.
+   - `finditer`: Returns an iterator over all matches.
+   - `match`: Tries to apply the pattern at the start of the string.
+   - `search`: Scans through a string looking for a match.
+   - `split`: Splits a string by pattern occurrences.
+   - `sub`: Replaces occurrences of the pattern in the string.
+   - `subn`: Returns a 2-tuple with the new string and the number of replacements.
+   - `template`: Compiles a template pattern.
+
+3. **Regular Expression Syntax:**
+   - This part explains various regex syntax elements:
+     - `.` (Dot): Matches any character (except newline).
+     - `^`: Matches the start of the string.
+     - `$`: Matches the end of the string.
+     - `*`: Matches zero or more occurrences.
+     - `+`: Matches one or more occurrences.
+     - `?`: Matches zero or one occurrence.
+     - `{m}`: Matches exactly m occurrences.
+     - `{m,n}`: Matches from m to n occurrences.
+     - `{m,n}?`: Matches as few occurrences as possible.
+     - `\`: Escapes special characters or signals a special sequence.
+     - `[]`: Indicates a set of characters.
+     - `|`: Represents alternation (matches X or Y).
+
+4. **Raw Strings in Python:**
+   - Explains the importance of using raw strings in regex.
+   - In raw strings, backslashes are treated as literal characters, making regex patterns cleaner.
+
+5. **Example - Validating Input Format:**
+   - Demonstrates the use of regex to validate input.
+   - Shows two equivalent regex patterns: one using a raw string and one without.
+   - Validates input in the format of three numbers enclosed in brackets.
+
+The provided code example shows how to validate input in a specific format (three numbers enclosed in brackets) using regular expressions and demonstrates the use of raw strings for cleaner pattern definition.
+
+Overall, this section provides a comprehensive introduction to regular expressions and their syntax, with a focus on Python's re module and the importance of using raw strings to simplify regex pattern creation.
+
+Character and character classes:
+In this section on regular expressions and escape characters, the following key points are discussed:
+
+1. Basic Regex Expressions:
+   - A single character, like '5' or 'b', matches one occurrence by default.
+   - Special characters in regex, like '+', '*', and '?', need a backslash (\) as a prefix if they are to be treated as literals.
+
+2. Escape Characters in Python and Regex:
+   - Escape characters in Python include '\', '\n', '\t', and more. They are used to represent special characters or control characters.
+   - To use special regex characters as literals, they must be preceded by a backslash (\).
+
+3. Example - Matching Special Characters:
+   - A Python example is given where regular expressions are used to match the presence of a '+' character and a newline character ('\n') in a sentence.
+   - The '^' symbol matches the start of the text, '.*' matches zero or more characters (including newlines), '[\+]+' matches one or more '+' characters, and '$' matches the end of the line.
+
+4. Character Classes and Ranges:
+   - Character classes, like [ea], match either 'e' or 'a'.
+   - Ranges, like [0-9], match any digit from 0 to 9.
+   - Negating a character class, like [^0-9], matches any character except digits.
+
+5. Handling Special Characters within Character Classes:
+   - Dashes (-) and some other characters are metacharacters by default. However, if they are the first character within a character class (e.g., [-abc]), they are treated as literals and do not require a backslash.
+   - Other metacharacters, like '.', '^', '?', '+', '*', are always treated as literals within character classes.
+
+6. Shortcuts in Character Classes:
+   - Python offers shortcuts for character classes, such as '\d' (matches any digit) and '\s' (matches whitespace).
+   - The ASCII flag can modify the behavior of these shortcuts.
+
+7. Example - Using Shortcuts in Character Classes:
+   - A Python example illustrates how to count the number of words in a sentence using shortcuts like '\w' and '\W'.
+   - The regular expression '^[\W]*[\w]*[\W]*' is used to identify words in a sentence.
+
+In summary, this section covers the basics of regular expressions, escape characters, character classes, and shortcuts within character classes. It provides practical examples to demonstrate the use of these concepts in Python.
+
+Quantifies and flags:
+Quantifies:
+This section explains quantifiers in regular expressions and provides shorthand notations for simplifying the use of quantifiers. The key points covered are as follows:
+
+1. Quantifiers in Regex:
+   - A quantifier in regex has the form {m, n}, specifying the minimum and maximum number of times an expression must match.
+   - For example, e{1,1}e{1,1} and e{2,2} both match "feelings" but not "belt."
+
+2. Shorthand Notations for Quantifiers:
+   - Regex provides shorthand notations to simplify quantifiers.
+   - If only one number is supplied, it's assumed that the minimum and maximum are the same. For example, e{4} is equivalent to e{4, 4}.
+   - Different minimum and maximum values can be convenient. For instance, to match both "travelled" and "traveled," you can use "travel{1,2}ed" or "travell{0,1}ed."
+   - The '?' symbol is used to represent {0,1}, meaning the preceding character is optional.
+
+3. Examples of Using Quantifiers:
+   - An example in Python demonstrates the use of quantifiers to match words like "travelled" and "traveled" with the pattern 'travell?ed' (where '?' is a shorthand for {0,1}).
+   - This allows for flexibility in matching words with different numbers of 'l' characters.
+
+In summary, this section clarifies the concept of quantifiers in regular expressions and shows how shorthand notations like '?' can be used to make regex patterns more concise and flexible. It provides a practical example in Python to illustrate the application of these quantifiers.
+
+Flags:
+Flags are used to tell the regex how to behave when looking for expressions.
+This section introduces various regex flags and their functions in Python. The key points covered include:
+
+1. Regex Flags:
+   - Python offers several flags to modify the behavior of regex patterns.
+   - Flags, like re.IGNORECASE or re.VERBOSE, can be used to make regex matching more flexible and readable.
+
+2. Examples of Flags:
+   - An example demonstrates the use of the IGNORECASE flag (re.IGNORECASE or re.I) for case-insensitive matching. It removes all vowels (both uppercase and lowercase) from a string.
+   - Another example uses the VERBOSE flag (re.VERBOSE or re.X) to make a complex regex pattern more readable. It checks whether a string is a valid octal or hexadecimal number.
+   
+3. IGNORECASE Flag:
+   - The IGNORECASE flag is used to make regex matching case-insensitive, reducing the need to specify both uppercase and lowercase characters explicitly.
+
+4. VERBOSE Flag:
+   - The VERBOSE flag allows comments and white spaces to be included in a regex pattern, making complex expressions more readable.
+   - It can be especially useful for explaining longer and more intricate regular expressions.
+
+In summary, this section covers the use of regex flags, specifically the IGNORECASE (case-insensitive) and VERBOSE (readable) flags, and provides practical examples to illustrate their application in Python.
+
+
