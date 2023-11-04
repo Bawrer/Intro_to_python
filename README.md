@@ -996,3 +996,185 @@ add()
 print("In main:", c)
 When we run above program, the output will be:
 Inside add(): 2 In main: 2
+
+#day 3
+## modules 
+· A file containing python code, typically functions, classes and variables that can be imported and used in other python script.
+
+· Modules in Python are a fundamental concept that allows you to organize and reuse code.
+
+· Modules help break down a program into smaller, manageable parts, promoting code reusability and organization.
+
+· Definition: A module in Python is a file containing Python code, typically functions, classes, and variables, that can be imported and used in other Python scripts. Modules help break down a program into smaller, manageable parts, promoting code reusability and organization.
+
+· Usage: You can use modules to structure your code logically and make it more maintainable. Python's standard library is a collection of modules that provide a wide range of functionality, from file manipulation to web development, mathematics, and more.
+
+· Creating Modules: To create your own module, you can write a Python script and save it with a .py file extension. This file can contain functions, classes, and variables that you want to reuse in other parts of your program.
+
+· Importing Modules: To use a module in your Python script, you import it using the import statement.
+
+For example:
+
+import mymodule # Import a module named "mymodule"
+
+· Accessing Module Members: Once a module is imported, you can access its functions, classes, and variables using dot notation.
+
+For example,
+
+if mymodule has a function named my_function, you can call it like this:
+
+mymodule.my_function()
+
+· Aliasing: You can alias a module or its members to give them shorter or more convenient names when using them in your code.
+
+For example:
+
+import mymodule as mm # Alias the module from mymodule import my_function as mf # Alias a specific function
+
+· Standard Library: Python comes with a vast standard library that includes modules for tasks like file I/O, math, networking, regular expressions, and more. These modules are readily available for use in your programs without the need for additional installation.
+
+· Third-Party Modules: Python's ecosystem benefits from a rich collection of third-party modules and packages that extend its capabilities. You can install and use these modules using package managers like pip.
+
+· Module Search Path: Python searches for modules in directories defined by the sys.path variable. By default, it includes the current directory and the standard library paths. You can add custom paths to this list to find your own modules.
+
+· __name__ and Module Execution: Python modules have a built-in __name__ attribute. When a module is executed, its __name__ is set to '__main__'. This allows you to include code that should only run when the module is the main program.
+
+· Packages: Packages are a way to organize related modules into directories and subdirectories. They include a special __init__.py file that marks a directory as a package. Packages help manage large codebases by providing a hierarchical structure.
+
+· Modules are a fundamental part of Python's modular and extensible design, making it easier to develop and maintain Python applications and libraries. They promote code reuse, encapsulation, and separation of concerns, making your code more organized and maintainable.
+
+Mechanism of Python Modules
+
+· There's a thing called program directory where the python modules are located its called PYTHONPATH.
+
+Listing of Modules
+
+· The list of available modules in Python can be found out by executing the following command in the command prompt (interpreter shell).
+
+When you want to see the lsit of available modules on python you execute
+
+Help(“module”) on the console.
+
+The mechanism of Python modules involves several steps that Python follows to locate, import, and use modules in your code. Here's a summary of the key aspects of how Python's module system works:
+
+1. Module Structure: A module in Python is a file containing Python code, typically with the `.py` extension. Modules can include functions, classes, variables, and even executable code.
+
+2. Module Search Path: Python uses a list of directories to search for modules. This list is defined in the `sys.path` variable and includes the following directories in this order:
+
+- The directory containing the script that was executed (if applicable).
+
+- Directories in the `PYTHONPATH` environment variable (if set).
+
+- Standard library directories.
+
+- Site-specific directories.
+
+- User-specific directories.
+
+3. Importing Modules: To use a module in your Python script, you import it using the `import` statement. For example:
+
+```python
+
+import mymodule # Import a module named "mymodule"
+
+```
+
+4. Dot Notation: Once imported, you can access the functions, classes, and variables from the module using dot notation. For instance:
+
+```python
+
+mymodule.my_function()
+
+```
+
+5. Module Caching: Python caches imported modules to improve performance. When a module is imported, it's executed only once, and subsequent imports reuse the cached module.
+
+6. Module Initialization: When you import a module, Python executes the code in the module from top to bottom. However, it only does this once per module, even if the module is imported multiple times.
+
+7. `__name__` Attribute: Modules have a built-in attribute called `__name__`. When a module is executed as the main program, its `__name__` is set to `'__main__'`. You can use this to include code that should only run when the module is executed directly.
+
+8. Packages: Packages are a way to organize related modules into directories. A package directory includes a special `__init__.py` file, which marks it as a package. Packages help manage large codebases by providing a hierarchical structure.
+
+9. Relative Imports: Modules can be organized into packages, and you can use relative imports to refer to modules within the same package. Relative imports use dot notation to specify the module's location within the package.
+
+```python
+
+from . import submodule # Relative import within a package
+
+```
+
+10. Standard Library and Third-Party Modules: Python's standard library provides a vast collection of modules for various tasks. In addition to the standard library, you can also install and use third-party modules and packages to extend Python's functionality.
+
+Python's module mechanism is a fundamental feature of the language that promotes code organization, reusability, and maintainability. It allows you to create modular and well-structured code by separating functionality into distinct units that can be easily imported and used in your programs.
+
+Importing modules
+
+The syntax of importing modules for python standard path is below,
+
+Import module_name
+
+· To fetch and use modules from other and new sources, we need to install Python PIP.
+
+· Python pip is a software that installs python modules from an index or using a manager like Anaconda.
+
+· Run the following command to install modules from new sources using python pip:
+
+· python -m pip3 install module_name
+
+· Run the following command to install modules from new sources using Ananconda:
+
+· conda install module_name
+
+· Example: Steps to install NumPy
+
+· python -m pip3 install numpy conda install numpy sudo apt install python3-numpy
+
+To import modules from an external source in Python, you typically use a package manager like `pip`, which allows you to download and install packages (collections of modules) from external sources such as the Python Package Index (PyPI). Here are the steps to import modules from an external source:
+
+1. **Install the Package Manager**:
+
+If you don't have `pip` installed, you can install it by following the instructions provided on the official Python website or the package manager's documentation.
+
+2. **Search for the Desired Package**:
+
+Use the package manager to search for the module or package you want to import. For example, to search for a package named "requests," you can run:
+
+```bash
+
+pip search requests
+
+```
+
+3. **Install the Package**:
+
+Once you've identified the package you want to use, you can install it using `pip`. For example, to install the "requests" package:
+
+```bash
+
+pip install requests
+
+```
+
+This command will download and install the "requests" package and its associated modules.
+
+4. **Import the Module in Your Python Code**:
+
+After installation, you can import the module(s) in your Python code as usual. For example:
+
+```python
+
+import requests
+
+```
+
+5. **Use the Imported Module**:
+
+You can then use the imported module and its functions, classes, and variables in your Python code. For example:
+
+```python
+
+response = requests.get('https://www.example.com')
+
+```
+
+By following these steps, you can import modules from external sources in Python. The process is the same for most external packages, but you may need to consult the specific package's documentation or PyPI page for any additional installation or usage instructions. Keep in mind that using a virtual environment for your project is recommended to manage package dependencies and avoid conflicts between different projects.
