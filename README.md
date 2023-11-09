@@ -1323,4 +1323,4 @@ This section introduces various regex flags and their functions in Python. The k
 
 In summary, this section covers the use of regex flags, specifically the IGNORECASE (case-insensitive) and VERBOSE (readable) flags, and provides practical examples to illustrate their application in Python.
 
-# Week 3 Day
+# week Day 3
