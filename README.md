@@ -1394,23 +1394,7 @@ List comprehensions:
 List comprehension provides a concise way to create lists in Python. They consist of an expression followed by a for clause and optional if.
 
 
-
-
-
-
-
-
-
-
-
-
-
 4 / 26
-
-
-
-
-
 
 Nested List Comprehensions:
 You can use list comprehensions for complex tasks, like transposing a matrix, but prefer built-in functions when possible. For transposing, use zip():
@@ -1436,32 +1420,17 @@ Sets:
 § You can create a set using curly braces or the set () function.
 § Sets are handy for membership testing and mathematical operations like union, intersection, difference, and symmetric difference.
 
-
-
 6 / 26
-
-
-
-
 
 Dictionaries:
 · Dictionaries are another data type in Python, used for key-value pairs.  
 · Dictionaries are created with curly braces or the dict() constructor.  
 · Keys must be unique, and you can store, extract, or delete values based on keys. Here's a quick overview.
 
-
-
-
-
-
 7 / 26
-
-
 
 Looping Techniques:
 You can loop through dictionaries using the items () method to get both the key and value simultaneously:
-
-
 
 You can loop through sequences and get the index and value using enumerate():
 
