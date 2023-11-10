@@ -997,7 +997,7 @@ print("In main:", c)
 When we run above program, the output will be:
 Inside add(): 2 In main: 2
 
-#day 3
+# day 3
 ## modules 
 · A file containing python code, typically functions, classes and variables that can be imported and used in other python script.
 
