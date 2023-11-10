@@ -997,6 +997,297 @@ print("In main:", c)
 When we run above program, the output will be:
 Inside add(): 2 In main: 2
 
+
+Week 3 Python
+Data structure Day 1
+· .Function Definition:
+o `fib(n)` is defined to print the Fibonacci series up to the given boundary `n`.
+o `fib2(n)` is defined to return a list containing the Fibonacci series up to `n`.
+
+· Fibonacci Calculation:
+o The Fibonacci series is generated using two variables, `a` and `b`, initialized to 0 and 1.
+o The series is calculated in a loop using the formula `a, b = b, a + b`.
+
+· Printing vs. Returning:
+o `fib(n)` prints the series while `fib2(n)` returns it as a list.
+· Function Calls:
+o `fib(2000)` and `fib(0)` are examples of function calls.
+o `fib2(100)` returns the Fibonacci series up to 100 and stores it in the variable `f100`.
+
+· Return Statement:
+o The `return` statement is used to return a value from a function. It returns `None` if omitted.
+
+· List Manipulation:
+o `result.append(a)` adds the value of `a` to the `result` list.
+
+· Method Calls:
+o `result.append(a)` demonstrates calling a method (`append()`) on a list object (`result`).
+· Function Renaming:
+o Functions can be assigned to other names, like `f = fib`, allowing you to call them using the new name.
+
+· None:
+o Functions without a `return` statement return `None`. It's Python's way of representing no value.
+
+· Efficiency:
+o The `result.append(a)` method is more efficient than `result = result + [a]` for building lists.
+
+More on lists:
+2 / 26
+· `list.append(x)`: Add an item to the end of the list.
+· `list.extend(iterable)`: Extend the list by appending items from an iterable.
+· `list.insert(i, x)`: Insert an item at a given position.
+· `list.remove(x)`: Remove the first occurrence of an item with a specific value.
+· `list.pop([i])`: Remove and return an item at a given position or the last item if no index is specified.
+· `list.clear()`: Remove all items from the list.
+· `list.index(x)`: Find the index of the first item with a specific value.
+· `list.count(x)`: Count the number of times a specific value appears in the list.
+· `list.sort()`: Sort the list in place.
+· `list.reverse()`: Reverse the list in place.
+· `list.copy()`: Create a shallow copy of the list.
+
+These methods allow you to manipulate and work with lists efficiently.
+Using List as stack and queues:
+You can use a list as a stack for "last-in, first-out" operations by using `append()` to add items to the top and `pop()` to retrieve items from the top.
+
+For a queue with "first-in, first-out" operations, it's better to use `collections.deque` for efficiency. It provides fast appends and pops from both ends.
+
+Stack using list:
+
+
+
+Queue using collections.deque:
+
+
+
+Lists are not efficient for queues because inserting or popping from the beginning of a list is slow due to shifting elements. Use `collections.deque` for faster queue operations.
+3 / 26
+List comprehensions:
+
+List comprehension provides a concise way to create lists in Python. They consist of an expression followed by a for clause and optional if.
+
+
+4 / 26
+
+Nested List Comprehensions:
+You can use list comprehensions for complex tasks, like transposing a matrix, but prefer built-in functions when possible. For transposing, use zip():
+
+
+
+
+The del statement / Tuples and Sequences:
+In Python, you can use the del statement to remove items from a list by specifying their index or clear the entire list. For example:
+5 / 26
+
+
+· Tuples are similar to lists but are immutable, meaning you can't change their elements after creation. They are often used for different purposes.  
+· Tuples are defined with parentheses, and they can be nested. You can use sequence unpacking to assign values from a tuple to variables:
+
+
+· Tuples with one item require a trailing comma to distinguish them from parentheses, like this:
+
+
+· Tuples are useful for situations where you want to ensure data remains unchanged, and sequence unpacking simplifies variable assignment from tuples.
+Sets:
+§ Python has a set data type that stores an unordered collection of unique elements.
+§ You can create a set using curly braces or the set () function.
+§ Sets are handy for membership testing and mathematical operations like union, intersection, difference, and symmetric difference.
+
+6 / 26
+
+Dictionaries:
+· Dictionaries are another data type in Python, used for key-value pairs.  
+· Dictionaries are created with curly braces or the dict() constructor.  
+· Keys must be unique, and you can store, extract, or delete values based on keys. Here's a quick overview.
+
+7 / 26
+
+Looping Techniques:
+You can loop through dictionaries using the items () method to get both the key and value simultaneously:
+
+You can loop through sequences and get the index and value using enumerate():
+
+
+To loop over multiple sequences in parallel, use zip():
+
+
+For looping in reverse, use reversed():
+
+
+To loop over a sequence in sorted order, use sorted():
+8 / 26
+
+
+Avoid modifying a list while looping over it, and consider creating a new list instead. For example, you can filter out NaN values from a list:
+
+
+
+Comparing Sequences and Other Types:
+· Sequence objects can be compared to other objects of the same type using lexicographical ordering. This means they are compared element by element, with the first differing element determining the outcome.
+· If all elements are equal, the sequences are considered equal.
+
+Examples of comparisons:
+o (1, 2, 3) < (1, 2, 4)
+o [1, 2, 3] < [1, 2, 4]
+o 'ABC' < 'C' < 'Pascal' < 'Python'
+o (1, 2, 3, 4) < (1, 2, 4)
+o (1, 2) < (1, 2, -1)
+o (1, 2, 3) == (1.0, 2.0, 3.0)
+o (1, 2, ('aa', 'ab')) < (1, 2, ('abc', 'a'), 4)
+
+You can compare objects of different types if they have appropriate comparison methods. Otherwise, it raises a TypeError exception.
+
+# Day 2:
+How to create list.
+A Python list is like a container that can hold multiple items (numbers, words, etc.). To create a list, you put your items inside square brackets [ ], separated by commas.
+9 / 26
+
+
+We can also have nested list, which we can have list as items:
+
+
+
+Access list elements:
+· In Python, you can access elements in a list using the index operator [].
+· Lists start with an index of 0, so the first item is at index 0, the second at 1, and so on. For example
+· We can use the index operator [] to access an item in a list. In Python, indices start at 0. So, a list having 5 elements will have an index from 0 to 4.
+· Trying to access indexes other than these will raise an IndexError. The index must be an integer. We can't use float or other types, this will result in TypeError.
+· Nested lists are accessed using nested indexing.
+
+10 / 26
+
+
+Output:
+
+
+
+Negative indexing:
+In Python, you can use negative indexing to access items in a list or sequence.
+
+· Index -1 refers to the last item.
+· Index -2 refers to the second-to-last item.
+· And so on, with each negative index counting backward from the end of the list.
+
+
+Output:
+11 / 26
+
+
+How to slice lists in Python?
+
+
+
+
+Output:
+
+12 / 26
+Add/Change List Elements:
+· Lists are mutable, meaning their elements can be changed unlike stings or tuple.
+· We can use the assignment operator = to change an item or range of items.
+
+
+
+Output.
+
+
+
+
+· We can add an item on the list using append ().
+· Add several items using extend().
+13 / 26
+
+   
+
+· Use the + operator to combine two lists.
+· This is called concatenation.
+· The * operator repeats a list for the given number of times.
+14 / 26
+
+
+
+
+Delete/Remove List Elements
+· In Python, you can delete or remove elements from a list using various methods.  
+· The two primary methods for removing elements from a list are using the `del` statement and the `remove()` method.  
+Here's a summary of each method along with an example:
+
+· Using the `del` Statement:
+- The `del` statement allows you to remove an element from a list by specifying its index.
+- It can also be used to delete entire slices of a list.
+- This method directly modifies the original list.
+
+Example:
+· ```python
+· # Create a list
+· my_list = [1, 2, 3, 4, 5]
+
+· # Remove the element at index 2 (which is '3')
+· del my_list[2]
+15 / 26
+
+· print(my_list)  # Output: [1, 2, 4, 5]
+```
+
+· Using the `remove()` Method:
+- The `remove()` method is used to delete the first occurrence of a specific value from the list.
+- It does not require specifying an index but rather the actual value to be removed.
+- If the value appears multiple times in the list, only the first occurrence is removed.
+
+Example:
+· ```python
+· # Create a list
+· my_list = [1, 2, 3, 2, 4, 5]
+
+· # Remove the first occurrence of the value '2'
+· my_list.remove(2)
+
+· print(my_list)  # Output: [1, 3, 2, 4, 5]
+· ```
+
+· It's important to note that if you want to remove an element from a list without knowing its index or value, you can use methods like `pop()` to remove the last element, or you can use list slicing to create a new list with the elements you want to keep. Additionally, you can use list comprehensions to filter out specific elements from a list and create a new list without them.
+
+Python List Method
+Python provides a variety of built-in list methods that allow you to manipulate and perform operations on lists efficiently. Here's a summary of some commonly used Python list methods along with examples:
+
+1. **append(element):**
+  - The `append()` method is used to add an element to the end of a list.
+
+  **Example:**
+  ```python
+  my_list = [1, 2, 3]
+  my_list.append(4)
+  print(my_list)  # Output: [1, 2, 3, 4]
+  ```
+16 / 26
+
+2. **extend(iterable):**
+  - The `extend()` method is used to add elements from an iterable (e.g., another list) to the end of the list.
+
+  **Example:**
+  ```python
+  my_list = [1, 2, 3]
+  my_list.extend([4, 5])
+  print(my_list)  # Output: [1, 2, 3, 4, 5]
+  ```
+
+3. **insert(index, element):**
+  - The `insert()` method allows you to insert an element at a specified index in the list.
+
+  **Example:**
+  ```python
+  my_list = [1, 2, 3]
+  my_list.insert(1, 4)
+  print(my_list)  # Output: [1, 4, 2, 3]
+  ```
+
+4. **remove(element):**
+  - The `remove()` method deletes the first occurrence of a specific element in the list.
+
+  **Example:**
+  ```python
+  my_list = [1, 2, 3, 2, 4, 5]
+  my_list.remove(2)
+  print(my_list)  # Output: [1, 3, 2, 4, 5]
+  ```
 # day 3
 ## modules 
 · A file containing python code, typically functions, classes and variables that can be imported and used in other python script.
@@ -1322,310 +1613,3 @@ This section introduces various regex flags and their functions in Python. The k
    - It can be especially useful for explaining longer and more intricate regular expressions.
 
 In summary, this section covers the use of regex flags, specifically the IGNORECASE (case-insensitive) and VERBOSE (readable) flags, and provides practical examples to illustrate their application in Python.
-
-# week Day 3
-
-1 / 26
-Week 3 Python
-Data structure Day 1
-· .Function Definition:
-o `fib(n)` is defined to print the Fibonacci series up to the given boundary `n`.
-o `fib2(n)` is defined to return a list containing the Fibonacci series up to `n`.
-
-· Fibonacci Calculation:
-o The Fibonacci series is generated using two variables, `a` and `b`, initialized to 0 and 1.
-o The series is calculated in a loop using the formula `a, b = b, a + b`.
-
-· Printing vs. Returning:
-o `fib(n)` prints the series while `fib2(n)` returns it as a list.
-· Function Calls:
-o `fib(2000)` and `fib(0)` are examples of function calls.
-o `fib2(100)` returns the Fibonacci series up to 100 and stores it in the variable `f100`.
-
-· Return Statement:
-o The `return` statement is used to return a value from a function. It returns `None` if omitted.
-
-· List Manipulation:
-o `result.append(a)` adds the value of `a` to the `result` list.
-
-· Method Calls:
-o `result.append(a)` demonstrates calling a method (`append()`) on a list object (`result`).
-· Function Renaming:
-o Functions can be assigned to other names, like `f = fib`, allowing you to call them using the new name.
-
-· None:
-o Functions without a `return` statement return `None`. It's Python's way of representing no value.
-
-· Efficiency:
-o The `result.append(a)` method is more efficient than `result = result + [a]` for building lists.
-
-More on lists:
-2 / 26
-· `list.append(x)`: Add an item to the end of the list.
-· `list.extend(iterable)`: Extend the list by appending items from an iterable.
-· `list.insert(i, x)`: Insert an item at a given position.
-· `list.remove(x)`: Remove the first occurrence of an item with a specific value.
-· `list.pop([i])`: Remove and return an item at a given position or the last item if no index is specified.
-· `list.clear()`: Remove all items from the list.
-· `list.index(x)`: Find the index of the first item with a specific value.
-· `list.count(x)`: Count the number of times a specific value appears in the list.
-· `list.sort()`: Sort the list in place.
-· `list.reverse()`: Reverse the list in place.
-· `list.copy()`: Create a shallow copy of the list.
-
-These methods allow you to manipulate and work with lists efficiently.
-Using List as stack and queues:
-You can use a list as a stack for "last-in, first-out" operations by using `append()` to add items to the top and `pop()` to retrieve items from the top.
-
-For a queue with "first-in, first-out" operations, it's better to use `collections.deque` for efficiency. It provides fast appends and pops from both ends.
-
-Stack using list:
-
-
-
-Queue using collections.deque:
-
-
-
-Lists are not efficient for queues because inserting or popping from the beginning of a list is slow due to shifting elements. Use `collections.deque` for faster queue operations.
-3 / 26
-List comprehensions:
-
-List comprehension provides a concise way to create lists in Python. They consist of an expression followed by a for clause and optional if.
-
-
-4 / 26
-
-Nested List Comprehensions:
-You can use list comprehensions for complex tasks, like transposing a matrix, but prefer built-in functions when possible. For transposing, use zip():
-
-
-
-
-The del statement / Tuples and Sequences:
-In Python, you can use the del statement to remove items from a list by specifying their index or clear the entire list. For example:
-5 / 26
-
-
-· Tuples are similar to lists but are immutable, meaning you can't change their elements after creation. They are often used for different purposes.  
-· Tuples are defined with parentheses, and they can be nested. You can use sequence unpacking to assign values from a tuple to variables:
-
-
-· Tuples with one item require a trailing comma to distinguish them from parentheses, like this:
-
-
-· Tuples are useful for situations where you want to ensure data remains unchanged, and sequence unpacking simplifies variable assignment from tuples.
-Sets:
-§ Python has a set data type that stores an unordered collection of unique elements.
-§ You can create a set using curly braces or the set () function.
-§ Sets are handy for membership testing and mathematical operations like union, intersection, difference, and symmetric difference.
-
-6 / 26
-
-Dictionaries:
-· Dictionaries are another data type in Python, used for key-value pairs.  
-· Dictionaries are created with curly braces or the dict() constructor.  
-· Keys must be unique, and you can store, extract, or delete values based on keys. Here's a quick overview.
-
-7 / 26
-
-Looping Techniques:
-You can loop through dictionaries using the items () method to get both the key and value simultaneously:
-
-You can loop through sequences and get the index and value using enumerate():
-
-
-To loop over multiple sequences in parallel, use zip():
-
-
-For looping in reverse, use reversed():
-
-
-To loop over a sequence in sorted order, use sorted():
-8 / 26
-
-
-Avoid modifying a list while looping over it, and consider creating a new list instead. For example, you can filter out NaN values from a list:
-
-
-
-Comparing Sequences and Other Types:
-· Sequence objects can be compared to other objects of the same type using lexicographical ordering. This means they are compared element by element, with the first differing element determining the outcome.
-· If all elements are equal, the sequences are considered equal.
-
-Examples of comparisons:
-o (1, 2, 3) < (1, 2, 4)
-o [1, 2, 3] < [1, 2, 4]
-o 'ABC' < 'C' < 'Pascal' < 'Python'
-o (1, 2, 3, 4) < (1, 2, 4)
-o (1, 2) < (1, 2, -1)
-o (1, 2, 3) == (1.0, 2.0, 3.0)
-o (1, 2, ('aa', 'ab')) < (1, 2, ('abc', 'a'), 4)
-
-You can compare objects of different types if they have appropriate comparison methods. Otherwise, it raises a TypeError exception.
-
-Day 2:
-How to create list.
-A Python list is like a container that can hold multiple items (numbers, words, etc.). To create a list, you put your items inside square brackets [ ], separated by commas.
-9 / 26
-
-
-We can also have nested list, which we can have list as items:
-
-
-
-Access list elements:
-· In Python, you can access elements in a list using the index operator [].
-· Lists start with an index of 0, so the first item is at index 0, the second at 1, and so on. For example
-· We can use the index operator [] to access an item in a list. In Python, indices start at 0. So, a list having 5 elements will have an index from 0 to 4.
-· Trying to access indexes other than these will raise an IndexError. The index must be an integer. We can't use float or other types, this will result in TypeError.
-· Nested lists are accessed using nested indexing.
-
-10 / 26
-
-
-Output:
-
-
-
-Negative indexing:
-In Python, you can use negative indexing to access items in a list or sequence.
-
-· Index -1 refers to the last item.
-· Index -2 refers to the second-to-last item.
-· And so on, with each negative index counting backward from the end of the list.
-
-
-Output:
-11 / 26
-
-
-How to slice lists in Python?
-
-
-
-
-Output:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-12 / 26
-Add/Change List Elements:
-· Lists are mutable, meaning their elements can be changed unlike stings or tuple.
-· We can use the assignment operator = to change an item or range of items.
-
-
-
-Output.
-
-
-
-
-· We can add an item on the list using append ().
-· Add several items using extend().
-13 / 26
-
-   
-
-· Use the + operator to combine two lists.
-· This is called concatenation.
-· The * operator repeats a list for the given number of times.
-14 / 26
-
-
-
-
-Delete/Remove List Elements
-· In Python, you can delete or remove elements from a list using various methods.  
-· The two primary methods for removing elements from a list are using the `del` statement and the `remove()` method.  
-Here's a summary of each method along with an example:
-
-· Using the `del` Statement:
-- The `del` statement allows you to remove an element from a list by specifying its index.
-- It can also be used to delete entire slices of a list.
-- This method directly modifies the original list.
-
-Example:
-· ```python
-· # Create a list
-· my_list = [1, 2, 3, 4, 5]
-
-· # Remove the element at index 2 (which is '3')
-· del my_list[2]
-15 / 26
-
-· print(my_list)  # Output: [1, 2, 4, 5]
-```
-
-· Using the `remove()` Method:
-- The `remove()` method is used to delete the first occurrence of a specific value from the list.
-- It does not require specifying an index but rather the actual value to be removed.
-- If the value appears multiple times in the list, only the first occurrence is removed.
-
-Example:
-· ```python
-· # Create a list
-· my_list = [1, 2, 3, 2, 4, 5]
-
-· # Remove the first occurrence of the value '2'
-· my_list.remove(2)
-
-· print(my_list)  # Output: [1, 3, 2, 4, 5]
-· ```
-
-· It's important to note that if you want to remove an element from a list without knowing its index or value, you can use methods like `pop()` to remove the last element, or you can use list slicing to create a new list with the elements you want to keep. Additionally, you can use list comprehensions to filter out specific elements from a list and create a new list without them.
-
-Python List Method
-Python provides a variety of built-in list methods that allow you to manipulate and perform operations on lists efficiently. Here's a summary of some commonly used Python list methods along with examples:
-
-1. **append(element):**
-  - The `append()` method is used to add an element to the end of a list.
-
-  **Example:**
-  ```python
-  my_list = [1, 2, 3]
-  my_list.append(4)
-  print(my_list)  # Output: [1, 2, 3, 4]
-  ```
-16 / 26
-
-2. **extend(iterable):**
-  - The `extend()` method is used to add elements from an iterable (e.g., another list) to the end of the list.
-
-  **Example:**
-  ```python
-  my_list = [1, 2, 3]
-  my_list.extend([4, 5])
-  print(my_list)  # Output: [1, 2, 3, 4, 5]
-  ```
-
-3. **insert(index, element):**
-  - The `insert()` method allows you to insert an element at a specified index in the list.
-
-  **Example:**
-  ```python
-  my_list = [1, 2, 3]
-  my_list.insert(1, 4)
-  print(my_list)  # Output: [1, 4, 2, 3]
-  ```
-
-4. **remove(element):**
-  - The `remove()` method deletes the first occurrence of a specific element in the list.
-
-  **Example:**
-  ```python
-  my_list = [1, 2, 3, 2, 4, 5]
-  my_list.remove(2)
-  print(my_list)  # Output: [1, 3, 2, 4, 5]
-  ```
