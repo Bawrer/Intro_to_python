@@ -1778,3 +1778,38 @@ example: # Traditional loop squares = [] for i in range(1, 6): squares.append(i*
 
 Using list comprehension
 squares = [i**2 for i in range(1, 6)]
+
+
+
+# week 4
+## day two
+### Iterators
+
+ The ability of an object to be looped over using a `for` statement in a programming language is often related to the presence of an iterator. In python, the `for` statement is designed to work with iterable objects, which have an associated iterator.
+
+Here's a general idea of how it works:
+
+1. The `for` statement in the python is designed to work with iterable objects.
+2. An iterable object is an object capable of returning its elements one at a time.
+3. Iterables often have an associated iterator, which is an object that keeps track of its current position in the iterable.
+
+Here's an example in Python:
+
+```python
+my_list = [1, 2, 3, 4, 5]
+
+# The for statement automatically creates an iterator and iterates over the elements
+for element in my_list:
+    print(element)
+# Output: 1
+#         2
+#         3
+#         4
+#         5
+```
+
+In this example, `my_list` is an iterable object (in this case, a list). The `for` statement automatically creates an iterator for `my_list` and iterates through its elements.
+
+For an object to be iterable in Python, it needs to implement the `__iter__()` method, which returns an iterator. The iterator, in turn, must implement the `__next__()` method to provide the next element in the sequence.
+
+Languages may have different mechanisms and syntax for handling iteration, but the fundamental concept is often similar: an iterable object with an associated iterator that allows sequential access to its elements.
