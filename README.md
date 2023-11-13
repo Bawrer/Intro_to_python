@@ -1875,7 +1875,7 @@ for element in reverse_iterator:
 #         3
 #         2
 #         1
-```
+```   
 
 In this example:
 
