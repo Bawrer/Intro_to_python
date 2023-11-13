@@ -1810,6 +1810,38 @@ for element in my_list:
 
 In this example, `my_list` is an iterable object (in this case, a list). The `for` statement automatically creates an iterator for `my_list` and iterates through its elements.
 
-For an object to be iterable in Python, it needs to implement the `__iter__()` method, which returns an iterator. The iterator, in turn, must implement the `__next__()` method to provide the next element in the sequence.
+ This style of access is clear, concise, and convenient. The use of iterators pervades and unifies Python. Behind the scenes, the for statement calls iter() on the container object. The function returns an iterator object that defines the method __next__() which accesses elements in the container one at a time. When there are no more elements, __next__() raises a StopIteration exception which tells the for loop to terminate. You can call the __next__() method using the next() built-in function
 
-Languages may have different mechanisms and syntax for handling iteration, but the fundamental concept is often similar: an iterable object with an associated iterator that allows sequential access to its elements.
+ this example shows how it all works:
+
+ >>> 
+
+>>> s = 'abc'
+
+>>> it = iter(s)
+
+>>> it
+
+<iterator object at 0x00A1DB50>
+
+>>> next(it)
+
+'a'
+
+>>> next(it)
+
+'b'
+
+>>> next(it)
+
+'c'
+
+>>> next(it)
+
+Traceback (most recent call last):
+
+  File "<stdin>", line 1, in <module>
+
+ next(it)
+
+StopIteration
