@@ -2179,3 +2179,129 @@ In this example:
 Keep in mind that redirecting `sys.stderr` is not the only way to handle errors. Depending on your application, you might want to log errors to a file, send them to a logging service, or handle them in a different way.
 
 If you are building a larger application, consider using a logging library like `logging` for more sophisticated and flexible error handling and logging capabilities. The `logging` module provides a powerful framework for emitting log messages from Python programs and libraries.
+
+# Error Output Redirection and Program Termination
+
+Yes, that's correct. The `sys` module in Python includes attributes for standard input (`sys.stdin`), standard output (`sys.stdout`), and standard error (`sys.stderr`). These attributes can be particularly useful for emitting warnings and error messages, especially when standard output has been redirected.
+
+Here's a brief explanation of how you might use `sys.stderr` for emitting error messages:
+
+```python
+import sys
+
+def emit_error_message(message):
+    # Write the error message to stderr
+    sys.stderr.write(f"Error: {message}\n")
+
+# Example usage
+try:
+    # Some code that may raise an exception
+    result = 1 / 0
+except ZeroDivisionError as e:
+    # Emit an error message to stderr
+    emit_error_message("Cannot divide by zero")
+```
+
+By writing error messages to `sys.stderr`, you ensure that they are printed to the standard error stream even if standard output has been redirected to a file or another stream. This is important for making error messages visible and distinguishable from regular output.
+
+For example, you might run a script and redirect its standard output to a file like this:
+
+```bash
+python myscript.py > output.txt
+```
+
+In such cases, error messages written to `sys.stderr` will still be displayed on the console, making it easier to identify and address issues.
+
+
+# String pattern and Matching
+
+String pattern matching in Python involves finding occurrences of a particular pattern within a larger string. The `re` module in Python provides powerful tools for working with regular expressions, which are a versatile way to define and match patterns. Here are some examples:
+
+### Using `re.search()` for Finding a Pattern
+
+```python
+import re
+
+text = "The cat and the hat are on the mat."
+
+pattern = r'cat'
+match = re.search(pattern, text)
+
+if match:
+    print(f"Pattern '{pattern}' found at index {match.start()}")
+else:
+    print(f"Pattern '{pattern}' not found.")
+```
+
+### Using `re.findall()` for Finding All Occurrences
+
+```python
+import re
+
+text = "The cat and the hat are on the mat."
+
+pattern = r'th'
+all_occurrences = re.findall(pattern, text)
+
+if all_occurrences:
+    print(f"All occurrences of pattern '{pattern}': {all_occurrences}")
+else:
+    print(f"Pattern '{pattern}' not found.")
+```
+
+### Using `re.finditer()` for Iterating Over Matches
+
+```python
+import re
+
+text = "The cat and the hat are on the mat."
+
+pattern = r'th'
+for match in re.finditer(pattern, text):
+    print(f"Found '{pattern}' at index {match.start()}")
+```
+
+### Using Anchors and Metacharacters
+
+```python
+import re
+
+text = "The cat and the hat are on the mat."
+
+pattern = r'^The'  # Matches 'The' at the beginning of the string
+match = re.search(pattern, text)
+
+if match:
+    print(f"Pattern '{pattern}' found at the beginning.")
+else:
+    print(f"Pattern '{pattern}' not found at the beginning.")
+
+pattern = r'\bthe\b'  # Matches 'the' as a whole word
+all_occurrences = re.findall(pattern, text, flags=re.IGNORECASE)
+
+if all_occurrences:
+    print(f"All occurrences of pattern '{pattern}': {all_occurrences}")
+else:
+    print(f"Pattern '{pattern}' not found.")
+```
+
+In these examples, `re.search()` looks for the first occurrence of a pattern, `re.findall()` finds all non-overlapping occurrences, and `re.finditer()` provides an iterator over all matches. Regular expressions offer a powerful and flexible way to specify patterns for matching in strings.
+
+## Internet Access
+There are a number of modules for accessing the internet and processing internet protocols. Two of the simplest are urllib.request for retrieving data from URLs and smtplib for sending mail: 
+
+>>> 
+
+>>> from urllib.request import urlopen
+
+>>> with urlopen('http://tycho.usno.navy.mil/cgi-bin/timer.pl') as response:
+
+...  for line in response:
+
+...      line = line.decode('utf-8')  # Decoding the binary data to text.
+
+...      if 'EST' in line or 'EDT' in line:  # look for Eastern Time
+
+...             print(line)
+
+<BR>Nov. 25, 09:43:32 PM EST
