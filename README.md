@@ -2342,3 +2342,808 @@ Here are a few key regex elements:
 - `()`: Groups patterns together.
 
 You can customize the regex pattern based on the specific text pattern you're looking for. Regular expressions can become quite complex, so you might want to refer to the Python `re` module documentation for more details: [re — Regular expression operations](https://docs.python.org/3/library/re.html).
+
+# week 4 day 1
+   ##Week 4 
+
+## Objects and classes  
+
+### Inheritance and private variables. 
+
+In Python, inheritance is a fundamental object-oriented programming (OOP) concept that allows a new class (subclass or derived class) to inherit attributes and methods from an existing class (base class or superclass).  
+
+This promotes code reuse, extensibility, and the creation of a hierarchy of classes. 
+
+To declare private variables we use double underscore__ infront of your variable name. 
+
+A private variable means its private to the class 
+
+ 
+
+#### Here are key points about inheritance in Python: 
+
+ 
+
+1. Syntax: 
+
+To create a subclass that inherits from a superclass, you define the subclass using the `class` keyword, followed by the subclass name and the superclass name in parentheses.  
+
+ 
+
+For example: 
+
+   class Superclass: 
+
+   # Superclass attributes and methods 
+
+ 
+
+  class Subclass(Superclass): 
+
+  # Subclass attributes and methods 
+
+ 
+
+2. Access to Superclass Methods: 
+
+ The subclass can access the methods and attributes of the superclass. 
+
+ This allows you to reuse code and extend the functionality of the superclass.  
+
+ You can call the superclass methods using the `super()` function. 
+
+ 
+
+3. Overriding Methods: 
+
+ If a method in the subclass has the same name as a method in the superclass, the method in the subclass will override the method in the superclass. 
+
+ This is known as method overriding, and it allows the subclass to provide a specific implementation. 
+
+ 
+
+4. Multiple Inheritance: 
+
+Python supports multiple inheritance, where a class can inherit from more than one superclass.  
+
+This is done by listing multiple superclass names in the parentheses after the subclass name. However, multiple inheritance can lead to complexities, and it's essential to use it carefully. 
+
+ 
+
+5. Inheritance Hierarchy: 
+
+Classes can form an inheritance hierarchy, where a class inherits from another class, and then another class inherits from it, creating a chain of inheritance. 
+
+This helps in organizing and structuring code. 
+
+Here's a simple example: 
+
+class Animal: 
+
+ def speak(self): 
+
+ print("Animal speaks") 
+
+ 
+
+class Dog(Animal): 
+
+ def bark(self): 
+
+ print("Dog barks") 
+
+ 
+
+# Creating an instance of Dog 
+
+my_dog = Dog() 
+
+ 
+
+# Accessing methods from the superclass 
+
+my_dog.speak()  # Output: Animal speaks 
+
+my_dog.bark()   # Output: Dog barks 
+
+In this example, the `Dog` class inherits from the `Animal` class, and the `Dog` instance can use both the `speak` method from the `Animal` class and the `bark` method from the `Dog` class. 
+
+ 
+
+### For presentation  
+
+ 
+
+fundamental concept in Python programming - Inheritance. It's a powerful feature in object-oriented programming that allows us to create a hierarchy of classes, promoting code reuse and organization. 
+
+Slide 1: What is Inheritance? 
+
+ 
+
+At its core, inheritance is a way for a new class to inherit attributes and methods from an existing class. Think of it as a way of passing down characteristics from a parent to a child. 
+
+Slide 2: Syntax of Inheritance 
+
+ 
+
+In Python, we use the class keyword to define classes. To create a subclass that inherits from a superclass, we simply include the superclass name in parentheses after the subclass name. 
+
+python 
+
+Copy code 
+
+class Superclass: 
+
+    # Superclass attributes and methods 
+
+ 
+
+class Subclass(Superclass): 
+
+    # Subclass attributes and methods 
+
+Slide 3: Accessing Superclass Methods 
+
+ 
+
+Once we have a subclass, we can access the methods and attributes of the superclass. This is done using the super() function. It allows us to reuse code and extend the functionality of the superclass. 
+
+python 
+
+Copy code 
+
+class Animal: 
+
+    def speak(self): 
+
+        print("Animal speaks") 
+
+ 
+
+class Dog(Animal): 
+
+    def bark(self): 
+
+        super().speak()  # Accessing superclass method 
+
+        print("Dog barks") 
+
+Slide 4: Overriding Methods 
+
+ 
+
+Inheritance allows us to override methods in the subclass. If a method in the subclass has the same name as a method in the superclass, the subclass method will override it. This enables us to provide a specific implementation. 
+
+python 
+
+Copy code 
+
+class Animal: 
+
+    def speak(self): 
+
+        print("Animal speaks") 
+
+ 
+
+class Dog(Animal): 
+
+    def speak(self): 
+
+        print("Dog barks")  # Overriding the speak method 
+
+Slide 5: Multiple Inheritance 
+
+ 
+
+Python supports multiple inheritance, where a class can inherit from more than one superclass. This can be useful but needs to be used carefully to avoid complexities. 
+
+python 
+
+Copy code 
+
+class A: 
+
+    pass 
+
+ 
+
+class B: 
+
+    pass 
+
+ 
+
+class C(A, B):  # Multiple inheritance 
+
+    pass 
+
+Conclusion: 
+
+ 
+
+Inheritance is a powerful tool that makes our code more modular, readable, and scalable. It encourages a structured approach to coding and helps in creating well-organized class hierarchies. 
+
+ 
+
+As you work on your projects, consider how inheritance can be applied to make your code more efficient and maintainable. 
+
+ 
+
+Q&A: 
+
+ 
+
+Now, I'd like to open the floor for any questions you may have about inheritance. Feel free to share your thoughts or ask for clarification. 
+
+Feel free to customize the presentation based on your audience and the specific examples you want to showcase. Adding practical examples and engaging with the audience can enhance the learning experience. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Private variables 
+
+ 
+
+private variables are a way to restrict access to certain class attributes or variables from outside the class itself. 
+
+ This encapsulation is achieved using a naming convention rather than a strict access control mechanism. 
+
+ 
+
+Variables designated as private in Python conventionally start with an underscore (_) as a prefix in their names (e.g., _variable_name). 
+
+ 
+
+ However, this is more of a convention and less of a strict rule, as Python does not have a strong notion of access control like some other languages do. 
+
+ 
+
+Although these variables are not truly private in the sense that they cannot be accessed at all from outside the class, their naming convention serves as a signal to other developers that these attributes are intended for internal use within the class, and they should not be accessed or modified directly from outside the class. 
+
+Python follows the principle of "we are all consenting adults here," which means that it trusts developers to use private variables responsibly and doesn't strictly enforce access restrictions. However, developers are encouraged to respect the convention and avoid direct manipulation of private variables from outside the class, accessing them instead through class methods known as getters and setters to maintain encapsulation and data integrity. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Example  
+
+ 
+
+ 
+
+ 
+
+## Day 2 
+
+### Iterators and Generators 
+
+ 
+
+Iterators and generators are essential features in Python that facilitate efficient handling of sequences and data streams, providing a way to iterate through elements without storing them entirely in memory. 
+
+ 
+
+ Iterators: 
+
+ 
+
+Definition: An iterator is an object that allows sequential access to elements within a collection or sequence, one element at a time, without the need to load the entire collection into memory. 
+
+   
+
+Usage: Iterators are used with iterable objects like lists, tuples, dictionaries, strings, etc., and they enable iteration using the `iter()` function and fetching elements using the `next()` function. 
+
+   
+
+Characteristics: 
+
+    Iterators maintain their internal state and remember the current position during iteration. 
+
+    - They implement two methods: `__iter__()` (to obtain the iterator object itself) and `__next__()` (to retrieve the next element in the sequence). 
+
+    - When all elements are exhausted, the `StopIteration` exception is raised. 
+
+ 
+
+####Generators: 
+
+ 
+
+Definition: Generators are a type of iterable that generate values on-the-fly and produce a sequence of values using the `yield` statement, allowing iteration without the need to construct an entire list or collection in memory. 
+
+   
+
+Usage: Generators can be created using generator functions (functions containing `yield` statements) or generator expressions (similar to list comprehensions but using round brackets `()`). 
+
+   
+
+Characteristics: 
+
+    - Generator functions use the `yield` keyword to produce a series of values, suspending the function's state between each `yield` call and resuming execution from where it left off when `next()` is called again. 
+
+    - They are memory efficient as they produce values on demand, reducing memory overhead. 
+
+    - Generator expressions are concise and create generators without the need for defining a separate function. 
+
+ 
+
+ Summary: 
+
+ 
+
+Iterators provide a way to access elements sequentially, remembering their state, and allowing iteration over a sequence using `iter()` and `next()` functions. 
+
+   
+
+Generators are a specific type of iterator that generates values lazily using `yield`, making them memory-efficient and suitable for handling large datasets or infinite sequences. 
+
+ 
+
+Both iterators and generators play a crucial role in Python programming, offering flexibility, efficiency, and a convenient way to handle and process data in a memory-efficient manner. 
+
+ 
+
+###Generator Expressions 
+
+ 
+
+Generator expressions in Python are concise and memory-efficient constructs for creating generators. They are similar to list comprehensions but use round brackets `()` instead of square brackets `[]`. Generator expressions generate values on-the-fly, allowing iteration over large or potentially infinite sequences without constructing the entire sequence in memory. 
+
+ 
+
+### Key points about Generator Expressions: 
+
+ 
+
+1. Syntax: Generator expressions follow a similar syntax to list comprehensions but use round brackets instead of square brackets: 
+
+ 
+
+    ```python 
+
+    # List comprehension 
+
+    list_comp = [x for x in range(10)]  # Generates a list 
+
+ 
+
+    # Generator expression 
+
+    gen_exp = (x for x in range(10))    # Generates a generator object 
+
+    ``` 
+
+ 
+
+2. Lazy Evaluation: Generator expressions produce values one at a time as they are needed. They do not create the entire sequence in memory at once, making them memory-efficient. 
+
+ 
+
+3. Iterative Access: You can iterate over the values produced by a generator expression using a `for` loop or by passing it to functions that accept iterables. 
+
+ 
+
+    ```python 
+
+    gen_exp = (x for x in range(10)) 
+
+    for value in gen_exp: 
+
+        print(value) 
+
+    ``` 
+
+ 
+
+4. Use Cases: Generator expressions are suitable for situations where you need to iterate over large datasets, process elements on-the-fly, or generate an infinite sequence without storing all the elements in memory. 
+
+ 
+
+5. Efficiency: They are especially useful when dealing with large collections of data, as they avoid the memory overhead associated with creating a full list or sequence. 
+
+ 
+
+6.Combining with Functions: Generator expressions can be used with functions that consume iterables, like `sum()`, `min()`, `max()`, `filter()`, `any()`, `all()`, etc., enabling efficient processing of data without loading it entirely into memory. 
+
+ 
+
+```python 
+
+# Example: Finding the sum of squares of even numbers using generator expression 
+
+even_squares_sum = sum(x**2 for x in range(10) if x % 2 == 0) 
+
+print(even_squares_sum)  # Output: 120 
+
+``` 
+
+ 
+
+generator expressions provide a concise and memory-efficient way to create generators in Python, allowing for the efficient processing of large or potentially infinite sequences of data. 
+
+ 
+
+ 
+
+### Error Output Redirection and Program Termination 
+
+ 
+
+Error output redirection and program termination involve managing how errors are handled, displayed, and the program's response to such errors. 
+
+ 
+
+#### Error Output Redirection: 
+
+ 
+
+1. Standard Error Stream (stderr): Python distinguishes between standard output (`stdout`) and standard error (`stderr`). Errors and exceptional situations are typically printed to `stderr` rather than `stdout`. 
+
+ 
+
+2. Redirection: Python provides ways to redirect error output (`stderr`) to different destinations. This can be useful for logging errors, saving error messages to a file, or suppressing error output. 
+
+ 
+
+    ```python 
+
+    import sys 
+
+ 
+
+    # Redirect stderr to a file 
+
+    with open('error_log.txt', 'w') as f: 
+
+        sys.stderr = f 
+
+        # Your code generating errors 
+
+    ``` 
+
+ 
+
+3. Error Handling: Python also allows programmers to catch and handle errors using `try`, `except`, `finally` blocks to handle exceptions gracefully without the program terminating abruptly. 
+
+ 
+
+### Program Termination: 
+
+ 
+
+1. **Exceptions:** Errors or exceptional situations in Python trigger exceptions. If unhandled, exceptions can cause the program to terminate abruptly, displaying error messages to the console. 
+
+ 
+
+2. Exception Handling: Python provides mechanisms like `try`, `except`, `finally` blocks to catch exceptions and execute specific code when an error occurs. This allows for graceful handling of errors without causing the program to crash. 
+
+ 
+
+    ```python 
+
+    try: 
+
+        # Code that might raise an exception 
+
+        result = 10 / 0 
+
+    except ZeroDivisionError as e: 
+
+        print(f"Error: {e}") 
+
+        # Handle the exception gracefully 
+
+    ``` 
+
+ 
+
+3. Program Exit: The `sys.exit()` function can be used to terminate a Python program explicitly with an exit status code. A non-zero exit status typically indicates that an error occurred. 
+
+ 
+
+    ```python 
+
+    import sys 
+
+ 
+
+    # Terminate program with an exit status 
+
+    sys.exit(1)  # Exit with status code 1 (indicating an error) 
+
+    ``` 
+
+ 
+
+Python provides ways to manage error output redirection, allowing control over where error messages are displayed or logged. Additionally, handling exceptions gracefully using `try` and `except` blocks helps prevent abrupt program termination due to errors, enabling better control and response to exceptional situations. When necessary, the `sys.exit()` function can be used to terminate a program explicitly with an exit status code. 
+
+ 
+
+ 
+
+ 
+
+How to Match Any Pattern of Text 
+
+ 
+
+Matching any pattern of text in Python involves using regular expressions (regex) via the `re` module. Regular expressions allow you to define flexible patterns to search for and manipulate text data. 
+
+ 
+
+#### Basic Steps to Match Any Pattern of Text using Regular Expressions: 
+
+ 
+
+1. Import the `re` Module: Start by importing the `re` module, which provides functions and methods for working with regular expressions. 
+
+ 
+
+    ```python 
+
+    import re 
+
+    ``` 
+
+ 
+
+2. **Create a Regular Expression Pattern:** Define a regex pattern that represents the text pattern you want to match. Regular expressions use special characters and syntax to define patterns. 
+
+ 
+
+    ```python 
+
+    pattern = r'your_pattern_here' 
+
+    ``` 
+
+ 
+
+   - `r` before the string indicates a raw string literal in Python, which is often used with regex patterns to handle backslashes and special characters properly. 
+
+ 
+
+3. **Use Functions/Methods for Pattern Matching:** 
+
+ 
+
+   - **`re.search()`**: Searches for a pattern in a string and returns the first match found. 
+
+ 
+
+        ```python 
+
+        text = "Your text here" 
+
+        match = re.search(pattern, text) 
+
+        if match: 
+
+            print("Pattern found:", match.group()) 
+
+        else: 
+
+            print("Pattern not found") 
+
+        ``` 
+
+ 
+
+   - **`re.findall()`**: Finds all occurrences of a pattern in a string and returns them as a list. 
+
+ 
+
+        ```python 
+
+        matches = re.findall(pattern, text) 
+
+        if matches: 
+
+            print("Pattern found:", matches) 
+
+        else: 
+
+            print("Pattern not found") 
+
+        ``` 
+
+ 
+
+   - **`re.match()`**: Checks if the pattern matches at the beginning of the string and returns a match object if found. 
+
+ 
+
+        ```python 
+
+        match = re.match(pattern, text) 
+
+        if match: 
+
+            print("Pattern found at the beginning:", match.group()) 
+
+        else: 
+
+            print("Pattern not found at the beginning") 
+
+        ``` 
+
+ 
+
+   - **`re.fullmatch()`**: Checks if the entire string matches the pattern and returns a match object if found. 
+
+ 
+
+        ```python 
+
+        match = re.fullmatch(pattern, text) 
+
+        if match: 
+
+            print("Entire string matches the pattern:", match.group()) 
+
+        else: 
+
+            print("Entire string does not match the pattern") 
+
+        ``` 
+
+ 
+
+4. **Regular Expression Patterns:** 
+
+ 
+
+   - Regular expressions use special characters like `.` (matches any character), `*` (matches zero or more occurrences), `+` (matches one or more occurrences), `[]` (matches a character set), `^` (matches the start of a string), `$` (matches the end of a string), etc. 
+
+ 
+
+   - You can combine these special characters and construct complex patterns to match specific text formats or structures. 
+
+ 
+
+Regular expressions offer powerful text matching capabilities, allowing you to find patterns, validate data, extract information, and perform text manipulation tasks efficiently. Understanding regex syntax and experimenting with different patterns is key to effectively matching various text patterns in Python. 
+
+ 
+
+## Day 3  
+
+###Dates and Times, Data Compression, Performance Measurement, and Quality Control 
+
+  
+
+### Dates and Times in Python: 
+
+Python provides the `datetime` module to handle dates and times.  
+
+It offers classes like `datetime`, `date`, `time`, `timedelta`, etc., allowing manipulation, formatting, and arithmetic operations on dates and times.  
+
+The `datetime` module also supports timezone handling, parsing, and formatting of date/time strings. 
+
+  
+
+### Data Compression in Python: 
+
+Data compression refers to reducing the size of data to save storage space or transmission bandwidth.  
+
+Python has libraries such as `zlib`, `gzip`, `bz2`, `lzma`, and `zipfile` that provide functionalities for compressing and decompressing data using various compression algorithms like DEFLATE, BZIP2, LZMA, and ZIP formats.  
+
+These libraries enable reading and writing compressed files and streams. 
+
+  
+
+### Performance Measurement in Python: 
+
+Python offers several modules and techniques for measuring the performance of code.  
+
+The `timeit` module is commonly used to measure the execution time of small code snippets. 
+
+ Profiling tools like `cProfile` or external profilers (e.g., `line_profiler`, `memory_profiler`) help identify performance bottlenecks, analyze memory usage, and optimize code for better performance. 
+
+  
+
+### Quality Control in Python: 
+
+Quality control involves ensuring the reliability, correctness, and maintainability of software. 
+
+ Python supports various testing frameworks like `unittest`, `pytest`, and `doctest` to automate testing and verify code functionality. Tools such as `flake8`, `pylint`, and `black` assist in code linting, style checking, and formatting adherence, promoting code consistency and readability. 
+
+These topics are crucial in software development and data manipulation tasks in Python, providing functionalities to manage dates and times efficiently, compress and decompress data, measure code performance, and ensure code quality through testing and adherence to coding standards. 
+
+ 
+
+ 
+
+Output formatting  
+
+Python refers to the process of presenting data in a specific structure or style to enhance readability and convey information effectively.  
+
+Python provides various methods and techniques for output formatting, including: 
+
+  
+
+### 1. String Formatting: 
+
+   - **`str.format()` method:** This method allows inserting values into a string by specifying placeholders `{}` that are replaced with corresponding variables or values. 
+
+   - **`f-strings` (formatted string literals):** Introduced in Python 3.6, f-strings provide a concise and readable way to embed expressions and variables directly within string literals using curly braces `{}`. 
+
+  
+
+### 2. `format()` Function: 
+
+   - The `format()` function enables formatting data with more flexibility. It supports specifying formatting options for numbers, strings, and other data types, controlling precision, alignment, and padding. 
+
+  
+
+### 3. C-style String Formatting: 
+
+   - Python also supports C-style string formatting using the `%` operator. However, this method is considered less preferred compared to the `str.format()` method or f-strings. 
+
+  
+
+### 4. Formatting Options: 
+
+   - Formatting options allow controlling the appearance of output, such as specifying decimal places for floating-point numbers, aligning text, adding padding, converting values to different representations (e.g., hexadecimal, octal), and applying width and precision. 
+
+  
+
+### Example: 
+
+```python 
+
+name = "Alice" 
+
+age = 30 
+
+height = 5.8 
+
+  
+
+# Using f-strings 
+
+print(f"Name: {name}, Age: {age}, Height: {height:.2f}") 
+
+  
+
+# Using str.format() method 
+
+print("Name: {}, Age: {}, Height: {:.2f}".format(name, age, height)) 
+
+  
+
+# Using format() function 
+
+print("Name: {0}, Age: {1}, Height: {2:.2f}".format(name, age, height)) 
+
+  
+
+# C-style string formatting 
+
+print("Name: %s, Age: %d, Height: %.2f" % (name, age, height)) 
+
+```  
+
+Output formatting in Python offers flexibility and readability, allowing developers to present data in a structured and easily understandable manner according to specific requirements.  
+
+The choice of formatting method often depends on personal preference, code readability, and compatibility with Python versions. 
